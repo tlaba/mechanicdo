@@ -5,28 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found | Mechanic Do Millwright Services</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<meta name="theme-color" content="#0f1417">
+
+<!--
+  Deliberately self-contained: no external CSS, JS, or images.
+  GitHub Pages serves this file for any missing path, including deep ones
+  like /some/made/up/path/, where relative asset links would break — and
+  root-absolute links (/assets/...) break on a project site served from
+  /mechanicdo/. Inlining everything keeps it correct at every URL.
+-->
 <style>
-  .notfound { min-height: 72vh; display: grid; place-items: center; text-align: center; }
-  .notfound .code { font-size: 4.5rem; font-weight: 800; color: var(--amber); line-height: 1; margin: 0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem 20px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #cdd7dd;
+    background:
+      radial-gradient(900px 420px at 82% -8%, rgba(245,163,3,.20), transparent 60%),
+      linear-gradient(180deg, #11171b 0%, #162026 100%);
+  }
+  .box { max-width: 600px; text-align: center; }
+  .brand {
+    display: inline-flex; align-items: center; gap: .6rem;
+    margin-bottom: 2.5rem; text-decoration: none;
+  }
+  .brand svg { width: 30px; height: 30px; color: #f5a303; }
+  .brand .name {
+    font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; color: #fff;
+  }
+  .brand .name span { color: #f5a303; }
+  .code {
+    font-size: 4.5rem; font-weight: 800; color: #f5a303;
+    line-height: 1; margin: 0 0 .4rem; letter-spacing: -.03em;
+  }
+  h1 {
+    color: #fff; font-size: clamp(1.6rem, 5vw, 2.3rem); font-weight: 800;
+    letter-spacing: -.02em; line-height: 1.18; margin: 0 0 .6rem;
+  }
+  p { color: #b7c3ca; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .9rem 1.7rem; border-radius: 999px; border: 1.5px solid transparent;
+    font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
+    transition: transform .12s ease, background-color .15s ease, border-color .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .primary { background: #f5a303; color: #1b1200; box-shadow: 0 6px 18px rgba(245,163,3,.32); }
+  .primary:hover { background: #ffb524; }
+  .ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+  .ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+  :focus-visible { outline: 3px solid #f5a303; outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
 <body>
-<main class="hero">
-  <div class="wrap notfound">
-    <div>
-      <p class="code">404</p>
-      <h1>That page took a shift off.</h1>
-      <p class="lede" style="margin-inline:auto">
-        The page you were after isn't here. If your line is down, don't hunt around &mdash; call dispatch.
-      </p>
-      <div class="hero__actions" style="justify-content:center">
-        <a class="btn btn--primary btn--lg" href="/">Back to home</a>
-        <a class="btn btn--ghost btn--lg" href="tel:+16470000000">Call (647) 000-0000</a>
-      </div>
-    </div>
+
+<div class="box">
+  <a class="brand" href="/" data-home>
+    <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
+      <path d="M20 3a17 17 0 1 0 0 34 17 17 0 0 0 0-34Zm0 5.5a11.5 11.5 0 0 1 11.2 9h-7.4a4.5 4.5 0 0 0-3.8-2.2 4.5 4.5 0 0 0-3.8 2.2H8.8A11.5 11.5 0 0 1 20 8.5Z"/>
+      <circle cx="20" cy="20" r="4.2" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <path d="M20 24.2V34M11.5 28.5l4-4M28.5 28.5l-4-4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="name">Mechanic <span>Do</span></span>
+  </a>
+
+  <p class="code">404</p>
+  <h1>That page took a shift off.</h1>
+  <p>The page you were after isn't here. If your line is down, don't hunt around &mdash; call dispatch.</p>
+
+  <div class="actions">
+    <a class="btn primary" href="/" data-home>Back to home</a>
+    <a class="btn ghost" href="tel:+16470000000">Call (647) 000-0000</a>
   </div>
-</main>
+</div>
+
+<script>
+  // On a GitHub project site the homepage is /<repo>/, not /. Point the
+  // "home" links at the right place without hard-coding the repo name, so
+  // this keeps working after a move to a custom domain at the root.
+  (function () {
+    var host = location.hostname;
+    var seg = location.pathname.split('/')[1];
+    if (/\.github\.io$/.test(host) && seg) {
+      var home = '/' + seg + '/';
+      var links = document.querySelectorAll('[data-home]');
+      for (var i = 0; i < links.length; i++) links[i].setAttribute('href', home);
+    }
+  })();
+</script>
+
 </body>
 </html>

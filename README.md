@@ -67,11 +67,22 @@ it quietly eats a lot of bot spam.
 
 ## Publishing it
 
-**GitHub Pages** (free, no account beyond GitHub):
-1. Push this branch and merge it to your default branch.
-2. Repo → **Settings** → **Pages** → Source: *Deploy from a branch* → `main` / `/ (root)`.
-3. Add your domain under **Custom domain**, and point a `CNAME` record at
-   `<your-username>.github.io` with your registrar.
+**GitHub Pages** (free, no account beyond GitHub) — the site is already on `main`:
+1. Repo → **Settings** → **Pages** → Source: *Deploy from a branch* → `main` / `/ (root)` → **Save**.
+2. Wait about a minute. The site goes live at `https://tlaba.github.io/mechanicdo/`.
+3. When you have the domain: same page, **Custom domain**, then add a `CNAME`
+   record at your registrar pointing `www` at `tlaba.github.io`. For the bare
+   domain (`mechanicdo.ca` with no `www`) add four `A` records instead, pointing at
+   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`
+   (confirm those against GitHub's current "Managing a custom domain" docs before
+   you type them in — GitHub has changed them before).
+   Tick **Enforce HTTPS** once the certificate is issued.
+
+> **While you're on the `tlaba.github.io` URL:** the canonical, Open Graph, and
+> JSON-LD tags in `index.html`, plus `robots.txt` and `sitemap.xml`, all still point
+> at `https://mechanicdo.ca/`. That's harmless for a site nobody has linked to yet,
+> but update them when you settle the domain — a canonical tag pointing at a domain
+> you don't own tells Google to index that address instead of the live one.
 
 **Netlify / Cloudflare Pages / Vercel:** connect the repo, leave the build command
 empty, set the publish directory to `/`. Done.
