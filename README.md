@@ -1,4 +1,4 @@
-# MechanicDo — Millwright Services website
+# Mechanic Do — Millwright Services website
 
 A fast, single-page marketing site for an industrial millwright business, built around
 the three services you're starting with: **preventive maintenance**, **breakdown
@@ -20,7 +20,7 @@ this list first; nothing here is a design decision, it's all business facts only
 | Phone number | `(647) 000-0000` / `+16470000000` | `index.html`, `404.html`, `assets/js/main.js` |
 | Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
 | Domain | `https://mechanicdo.ca/` | `index.html`, `robots.txt`, `sitemap.xml` |
-| Business name | `MechanicDo Millwright Services` | `index.html`, `404.html`, `README.md` |
+| Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
 | Office hours | `Mon–Fri 7:00–17:00` | `index.html` (contact list) |
 
 Fast find-and-replace for the phone and email:
@@ -37,7 +37,7 @@ These read as statements of fact to a customer and to a plant's procurement team
 Keep them only if they're true today; edit or delete them otherwise.
 
 - **"Licensed 433A millwrights"** — hero trust strip, `index.html`
-- **"WSIB covered & fully insured"** — hero trust strip, "Why MechanicDo", FAQ
+- **"WSIB covered & fully insured"** — hero trust strip, "Why Mechanic Do", FAQ
 - **Response targets: "2–4 hrs" for contract customers, "same day" for new** — hero card, FAQ
 - **"24/7/365 dispatch"** — top bar, hero, services, footer. Only promise the hours you'll actually answer.
 - **"30 days' notice" cancellation** on PM agreements — FAQ
@@ -112,7 +112,7 @@ robots.txt, sitemap.xml Search engine basics — update the domain
 3. **Capabilities** — equipment, millwright work, and industries, so buyers self-qualify
 4. **Coverage** — GTA cities today plus a three-stage expansion roadmap (Ontario → Canada → US)
 5. **How it works** — four steps from first call to written report
-6. **Why MechanicDo** — differentiators aimed at maintenance managers
+6. **Why Mechanic Do** — differentiators aimed at maintenance managers
 7. **FAQ** — the objections that come up before someone calls
 8. **Quote** — contact details and the request form
 

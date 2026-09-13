@@ -1,5 +1,5 @@
 /* ============================================================
-   MechanicDo — site behaviour
+   Mechanic Do — site behaviour
    Vanilla JS, no dependencies. Loaded with `defer`.
    ============================================================ */
 (function () {

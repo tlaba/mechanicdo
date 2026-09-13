@@ -27,7 +27,7 @@
   </g>
 
   <text x="152" y="122" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">
-    Mechanic<tspan fill="#f5a303">Do</tspan>
+    Mechanic <tspan fill="#f5a303">Do</tspan>
   </text>
   <text x="152" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="4" fill="#8f9ca3">
     MILLWRIGHT SERVICES
