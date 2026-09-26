@@ -1,6 +1,8 @@
 /* ============================================================
-   Mechanic Do — site behaviour
+   Mechanic Do — site behaviour ("Drafting Table" design)
    Vanilla JS, no dependencies. Loaded with `defer`.
+   Everything here is progressive enhancement: with JS off the
+   page is complete and readable (menu shows as a plain row).
    ============================================================ */
 (function () {
   'use strict';
@@ -55,9 +57,11 @@
       }
     });
     // Reset state when the layout returns to desktop.
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 780) setNav(false);
-    });
+    // Keep NAV_DESKTOP in sync with the 1120px breakpoint in styles.css.
+    var NAV_DESKTOP = window.matchMedia('(min-width: 1120px)');
+    var onBreakpoint = function () { if (NAV_DESKTOP.matches) setNav(false); };
+    if (NAV_DESKTOP.addEventListener) NAV_DESKTOP.addEventListener('change', onBreakpoint);
+    else if (NAV_DESKTOP.addListener) NAV_DESKTOP.addListener(onBreakpoint);
   }
 
   /* ---------------- header shadow on scroll ---------------- */
@@ -75,33 +79,39 @@
     .filter(Boolean);
 
   if ('IntersectionObserver' in window && sections.length) {
+    // Track every nav section inside the reading band; highlight the last
+    // one in document order, or none (e.g. back up in the hero).
+    var inBand = {};
     var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(function (a) {
-          a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
-        });
+      entries.forEach(function (entry) { inBand[entry.target.id] = entry.isIntersecting; });
+      var current = null;
+      sections.forEach(function (s) { if (inBand[s.id]) current = s.id; });
+      navLinks.forEach(function (a) {
+        a.classList.toggle('is-active', current !== null && a.getAttribute('href') === '#' + current);
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ---------------- gentle reveal on scroll ---------------- */
+  /* ---------------- pen-plotter draw-in ----------------
+     Only the decorative line work of the drawings (the drive-train
+     elevation and the service-area plan) is "plotted" when it scrolls
+     into view. Text and content are never hidden, and a safety timer
+     finishes every drawing even if the observer never fires. */
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    var revealables = $$('.card, .feature, .step, .col, .coverage__list, .faq details, .quote__form');
-    revealables.forEach(function (el) { el.classList.add('reveal'); });
-
-    var revealer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry, i) {
+  var plotTargets = $$('.ga[data-plot], .cov__plan[data-plot]');
+  if ('IntersectionObserver' in window && !reduceMotion && plotTargets.length) {
+    document.documentElement.classList.add('can-plot');
+    var plotAll = function () { plotTargets.forEach(function (el) { el.classList.add('is-plotted'); }); };
+    var plotter = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        // Small stagger so a row of cards doesn't pop all at once.
-        setTimeout(function () { entry.target.classList.add('is-visible'); }, i * 70);
+        entry.target.classList.add('is-plotted');
         obs.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
-
-    revealables.forEach(function (el) { revealer.observe(el); });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    plotTargets.forEach(function (el) { plotter.observe(el); });
+    window.setTimeout(plotAll, 5000);
   }
 
   /* ---------------- quote form ---------------- */

@@ -14,10 +14,13 @@
 <meta property="og:url" content="https://mechanicdo.ca/">
 <meta property="og:image" content="https://mechanicdo.ca/assets/img/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0f1417">
+<meta name="theme-color" content="#0f3c69">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/martian-mono-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
 
 <!-- Local business structured data. Update NAP + hours before publishing. -->
 <script type="application/ld+json">
@@ -60,155 +63,359 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="topbar">
-  <div class="wrap topbar__inner">
-    <span class="topbar__item"><span class="pulse" aria-hidden="true"></span> 24/7 breakdown dispatch across the GTA</span>
-    <a class="topbar__phone" href="tel:+16470000000">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
-      (647) 000-0000
-    </a>
+<!-- ============ TOP STRIP ============ -->
+<div class="strip">
+  <div class="strip__in">
+    <p class="strip__msg"><span class="pulse" aria-hidden="true"></span>24/7 breakdown dispatch across the GTA</p>
+    <p class="strip__dwg" aria-hidden="true">DWG MD-001 &middot; Sheet 1 of 1 &middot; Rev C</p>
+    <a class="strip__tel" href="tel:+16470000000">(647) 000-0000</a>
   </div>
 </div>
 
-<header class="site-header" id="siteHeader">
-  <div class="wrap header__inner">
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="siteHeader">
+  <div class="hdr__in">
     <a class="brand" href="#top" aria-label="Mechanic Do home">
-      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M20 3a17 17 0 1 0 0 34 17 17 0 0 0 0-34Zm0 5.5a11.5 11.5 0 0 1 11.2 9h-7.4a4.5 4.5 0 0 0-3.8-2.2 4.5 4.5 0 0 0-3.8 2.2H8.8A11.5 11.5 0 0 1 20 8.5Z" fill="currentColor"/>
-        <circle cx="20" cy="20" r="4.2" fill="none" stroke="currentColor" stroke-width="2.6"/>
-        <path d="M20 24.2V34M11.5 28.5l4-4M28.5 28.5l-4-4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
-      </svg>
-      <span class="brand__text"><span class="brand__name">Mechanic <span class="brand__do">Do</span></span><small>Millwright Services</small></span>
+      <span class="brand__word">Mechanic</span>
+      <span class="brand__leader" aria-hidden="true"></span>
+      <span class="brand__balloon">Do</span>
+      <span class="brand__sub">Millwright services</span>
     </a>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-
     <nav class="nav" id="siteNav" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#coverage">Coverage</a>
-      <a href="#process">How it works</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn--sm btn--primary" href="#quote">Request a quote</a>
+      <a href="#services"><span class="nav__z" aria-hidden="true">B</span>Services</a>
+      <a href="#capabilities"><span class="nav__z" aria-hidden="true">C</span>Capabilities</a>
+      <a href="#coverage"><span class="nav__z" aria-hidden="true">D</span>Coverage</a>
+      <a href="#process"><span class="nav__z" aria-hidden="true">E</span>How it works</a>
+      <a href="#faq"><span class="nav__z" aria-hidden="true">G</span>FAQ</a>
+      <a class="btn btn--ink btn--sm nav__cta" href="#quote">Request a quote</a>
     </nav>
+
+    <a class="hdr__call" href="tel:+16470000000">
+      <svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
+      <span class="hdr__call-lbl">Call</span>
+      <span class="hdr__call-num">(647) 000-0000</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
   </div>
 </header>
 
-<main id="main">
+<main id="main" class="sheet">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="top">
-    <div class="wrap hero__inner">
-      <div class="hero__copy">
-        <p class="eyebrow">Greater Toronto Area &middot; Industrial &amp; manufacturing</p>
-        <h1>Millwrights who keep your line running.</h1>
-        <p class="lede">
-          Scheduled preventive maintenance, emergency breakdown response, and contract
-          shift coverage &mdash; delivered by licensed industrial millwrights who show up
-          with the right tools and leave you a written record.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="#quote">Request a quote</a>
-          <a class="btn btn--ghost btn--lg" href="tel:+16470000000">Call (647) 000-0000</a>
+  <div class="ruler" aria-hidden="true">
+    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+  </div>
+
+  <!-- ================= A · HERO ================= -->
+  <section class="hero zone" id="top" data-zone="A" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="dimline"><span class="dimline__txt">Greater Toronto Area &middot; Industrial &amp; manufacturing</span></p>
+          <h1 id="hero-title">Millwrights who keep your <span class="redline">line running.</span></h1>
+          <p class="lede">
+            Scheduled preventive maintenance, emergency breakdown response, and contract
+            shift coverage &mdash; delivered by licensed industrial millwrights who show up
+            with the right tools and leave you a written record.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--ink btn--lg" href="#quote">Request a quote <span class="btn__arw" aria-hidden="true"></span></a>
+            <a class="btn btn--line btn--lg" href="tel:+16470000000">
+              <svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
+              Call (647) 000-0000
+            </a>
+          </div>
         </div>
-        <ul class="hero__trust">
-          <li>Licensed 433A millwrights</li>
-          <li>Fully insured</li>
-          <li>24/7 emergency dispatch</li>
-          <li>Written reports on every visit</li>
-        </ul>
+
+        <aside class="plate dispatch" aria-labelledby="dispatch-title">
+          <span class="reg reg--tl" aria-hidden="true"></span><span class="reg reg--tr" aria-hidden="true"></span>
+          <span class="reg reg--bl" aria-hidden="true"></span><span class="reg reg--br" aria-hidden="true"></span>
+          <p class="viewtag"><span class="balloon balloon--sm" aria-hidden="true">A</span>Detail A &middot; 24/7 dispatch</p>
+          <h2 id="dispatch-title">Line down right now?</h2>
+          <p class="dispatch__txt">Call the dispatch line and talk to a millwright, not a call centre. Target on-site response in the GTA:</p>
+
+          <ul class="sla">
+            <li class="sla__row sla__row--short">
+              <span class="sla__who">Contract customers</span>
+              <strong class="dim"><span class="dim__txt">2&ndash;4 hrs</span></strong>
+              <span class="sla__ends" aria-hidden="true"><span>Call</span><span>On site</span></span>
+            </li>
+            <li class="sla__row">
+              <span class="sla__who">New customers, where crews allow</span>
+              <strong class="dim"><span class="dim__txt">Same day</span></strong>
+              <span class="sla__ends" aria-hidden="true"><span>Call</span><span>On site</span></span>
+            </li>
+          </ul>
+
+          <a class="btn btn--red btn--block btn--lg" href="tel:+16470000000">
+            <svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
+            Call dispatch now
+          </a>
+          <p class="dispatch__note">Prefer email? <a href="mailto:dispatch@mechanicdo.ca">dispatch@mechanicdo.ca</a></p>
+        </aside>
+
+        <div class="notes">
+          <h2 class="notes__title">General notes</h2>
+          <ol class="notes__list">
+            <li><span class="balloon" aria-hidden="true">1</span>Licensed 433A millwrights</li>
+            <li><span class="balloon" aria-hidden="true">2</span>Fully insured</li>
+            <li><span class="balloon" aria-hidden="true">3</span>24/7 emergency dispatch</li>
+            <li><span class="balloon" aria-hidden="true">4</span>Written reports on every visit</li>
+          </ol>
+        </div>
       </div>
 
-      <aside class="hero__card" aria-label="Line down right now">
-        <h2>Line down right now?</h2>
-        <p>Call the dispatch line and talk to a millwright, not a call centre. Target on-site response in the GTA:</p>
-        <div class="sla">
-          <div><strong>2&ndash;4 hrs</strong><span>Contract customers</span></div>
-          <div><strong>Same day</strong><span>New customers, where crews allow</span></div>
+      <!-- General arrangement drawing -->
+      <figure class="ga" data-plot>
+        <div class="ga__draw">
+          <svg class="ga__svg" viewBox="0 0 1160 300" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="gaHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9"/></pattern>
+              <pattern id="gaLag" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7"/></pattern>
+            </defs>
+
+            <!-- ground -->
+            <rect class="ga__hatchfill" x="20" y="250" width="1120" height="12"/>
+            <line class="p thk" pathLength="1" x1="20" y1="250" x2="1140" y2="250"/>
+
+            <!-- centre line -->
+            <line class="cl" x1="18" y1="160" x2="1142" y2="160"/>
+
+            <!-- baseplate -->
+            <rect class="p" pathLength="1" x="30" y="236" width="560" height="14"/>
+
+            <!-- motor -->
+            <rect class="p fill" pathLength="1" x="40" y="104" width="20" height="112" rx="9"/>
+            <rect class="p fill" pathLength="1" x="58" y="94" width="176" height="132" rx="6"/>
+            <path class="p thin" pathLength="1" d="M80 100v120M92 100v120M104 100v120M116 100v120M128 100v120M140 100v120M152 100v120M164 100v120M176 100v120M188 100v120M200 100v120M212 100v120"/>
+            <rect class="p fill" pathLength="1" x="118" y="70" width="60" height="24" rx="2"/>
+            <rect class="p fill" pathLength="1" x="234" y="108" width="16" height="104" rx="2"/>
+            <rect class="p" pathLength="1" x="74" y="226" width="34" height="10"/>
+            <rect class="p" pathLength="1" x="184" y="226" width="34" height="10"/>
+            <rect class="p fill" pathLength="1" x="250" y="150" width="36" height="20"/>
+
+            <!-- coupling -->
+            <rect class="p fill" pathLength="1" x="286" y="132" width="26" height="56" rx="3"/>
+            <rect class="p fill" pathLength="1" x="316" y="132" width="26" height="56" rx="3"/>
+            <rect class="p" pathLength="1" x="307" y="140" width="14" height="6"/>
+            <rect class="p" pathLength="1" x="307" y="174" width="14" height="6"/>
+            <rect class="p fill" pathLength="1" x="342" y="150" width="24" height="20"/>
+
+            <!-- gearbox -->
+            <rect class="p fill" pathLength="1" x="366" y="136" width="10" height="48"/>
+            <rect class="p fill" pathLength="1" x="376" y="86" width="180" height="150" rx="5"/>
+            <rect class="p fill" pathLength="1" x="426" y="74" width="80" height="12"/>
+            <rect class="p fill" pathLength="1" x="461" y="62" width="10" height="12"/>
+            <path class="p thin" pathLength="1" d="M416 86v150M516 86v150M376 124h180"/>
+            <circle class="p" pathLength="1" cx="466" cy="200" r="8"/>
+            <circle class="p thin" pathLength="1" cx="466" cy="200" r="3"/>
+            <rect class="p fill" pathLength="1" x="556" y="134" width="12" height="52"/>
+
+            <!-- output shaft with break -->
+            <path class="p" pathLength="1" d="M568 148H776M568 172H776"/>
+            <path class="p" pathLength="1" d="M776 148c-7 5 7 7 0 12c-7 5 7 7 0 12"/>
+            <path class="p" pathLength="1" d="M794 148c7 5-7 7 0 12c7 5-7 7 0 12"/>
+            <path class="p" pathLength="1" d="M794 148H1120V172H794"/>
+            <rect class="p thin" pathLength="1" x="1076" y="148" width="36" height="5"/>
+
+            <!-- bearing 1 -->
+            <rect class="p" pathLength="1" x="588" y="236" width="84" height="14"/>
+            <path class="p fill" pathLength="1" d="M604 214V160a26 26 0 0 1 52 0V214Z"/>
+            <rect class="p fill" pathLength="1" x="592" y="214" width="76" height="22"/>
+            <path class="hid" d="M604 148H656M604 172H656"/>
+            <path class="p" pathLength="1" d="M630 134V122"/>
+            <rect class="p fill" pathLength="1" x="625" y="114" width="10" height="8"/>
+            <rect class="p" pathLength="1" x="596" y="208" width="10" height="6"/>
+            <rect class="p" pathLength="1" x="654" y="208" width="10" height="6"/>
+
+            <!-- sprocket -->
+            <rect class="p fill" pathLength="1" x="696" y="106" width="36" height="108" rx="2"/>
+            <path class="p thin" pathLength="1" d="M708 106v108M720 106v108"/>
+            <path class="hid" d="M696 148H732M696 172H732"/>
+
+            <!-- head pulley / drum -->
+            <rect class="p fill" pathLength="1" x="832" y="92" width="170" height="136" rx="4"/>
+            <rect class="ga__lag" x="844" y="96" width="146" height="128"/>
+            <path class="p thin" pathLength="1" d="M844 92v136M990 92v136"/>
+            <path class="hid" d="M832 148H1002M832 172H1002"/>
+
+            <!-- bearing 2 -->
+            <rect class="p" pathLength="1" x="1016" y="236" width="84" height="14"/>
+            <path class="p fill" pathLength="1" d="M1032 214V160a26 26 0 0 1 52 0V214Z"/>
+            <rect class="p fill" pathLength="1" x="1020" y="214" width="76" height="22"/>
+            <path class="hid" d="M1032 148H1084M1032 172H1084"/>
+            <path class="p" pathLength="1" d="M1058 134V122"/>
+            <rect class="p fill" pathLength="1" x="1053" y="114" width="10" height="8"/>
+            <rect class="p" pathLength="1" x="1024" y="208" width="10" height="6"/>
+            <rect class="p" pathLength="1" x="1082" y="208" width="10" height="6"/>
+
+            <!-- overall dimension -->
+            <path class="dimx" d="M30 256V292M1120 176V292"/>
+            <path class="dimx" d="M36 284H1114"/>
+            <path class="dimx arrowhead" d="M30 284l10-4v8zM1120 284l-10-4v8z"/>
+            <rect class="ga__dimbg" x="455" y="274" width="250" height="20"/>
+            <text class="ga__dimtxt" x="580" y="289" text-anchor="middle">TYPICAL DRIVE TRAIN &#183; NTS</text>
+
+            <!-- balloons + leaders -->
+            <g class="ga__balloons">
+              <path class="lead" d="M314 52V128"/><circle class="dot" cx="314" cy="130" r="3"/>
+              <circle class="bal" cx="314" cy="34" r="17"/><text x="314" y="40" text-anchor="middle">1</text>
+
+              <path class="lead" d="M478 50L500 84"/><circle class="dot" cx="501" cy="86" r="3"/>
+              <circle class="bal" cx="470" cy="34" r="17"/><text x="470" y="40" text-anchor="middle">2</text>
+
+              <path class="lead" d="M630 52V110"/><circle class="dot" cx="630" cy="112" r="3"/>
+              <circle class="bal" cx="630" cy="34" r="17"/><text x="630" y="40" text-anchor="middle">3</text>
+
+              <path class="lead" d="M752 50L722 104"/><circle class="dot" cx="721" cy="106" r="3"/>
+              <circle class="bal" cx="760" cy="34" r="17"/><text x="760" y="40" text-anchor="middle">4</text>
+
+              <path class="lead" d="M917 52V90"/><circle class="dot" cx="917" cy="92" r="3"/>
+              <circle class="bal" cx="917" cy="34" r="17"/><text x="917" y="40" text-anchor="middle">5</text>
+
+              <path class="lead" d="M1066 50L1060 110"/><circle class="dot" cx="1060" cy="112" r="3"/>
+              <circle class="bal" cx="1068" cy="34" r="17"/><text x="1068" y="40" text-anchor="middle">6</text>
+            </g>
+          </svg>
         </div>
-        <a class="btn btn--primary btn--block" href="tel:+16470000000">Call dispatch now</a>
-        <p class="hero__card-note">Prefer email? <a href="mailto:dispatch@mechanicdo.ca">dispatch@mechanicdo.ca</a></p>
-      </aside>
+        <figcaption class="ga__cap">
+          <p class="ga__title"><span>Elevation</span> Typical drive train &mdash; what we keep turning</p>
+          <ol class="ga__legend">
+            <li>Alignment</li>
+            <li>Gearboxes &amp; speed reducers</li>
+            <li>Bearing &amp; seal replacement</li>
+            <li>Belt, chain &amp; sprocket service</li>
+            <li>Conveyors &amp; material handling</li>
+            <li>Vibration &amp; thermal checks</li>
+          </ol>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ================= SERVICES ================= -->
-  <section class="section" id="services">
+  <!-- ================= B · SERVICES ================= -->
+  <section class="sec zone" id="services" data-zone="B" aria-labelledby="services-title">
     <div class="wrap">
-      <header class="section__head">
-        <p class="eyebrow">What we do</p>
-        <h2>Three ways we cover your maintenance</h2>
-        <p class="section__sub">Start with one, or combine them into a single monthly agreement. No long lock-ins.</p>
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">B</span><p class="cut__label">Section B&ndash;B &middot; What we do</p><span class="cut__end cut__end--r" aria-hidden="true">B</span></div>
+        <div class="sec-head__row">
+          <h2 id="services-title">Three ways we cover your maintenance</h2>
+          <p class="sec-sub">Start with one, or combine them into a single monthly agreement. No long lock-ins.</p>
+        </div>
       </header>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+      <div class="sheets">
+        <article class="sheet-card">
+          <span class="reg reg--tl" aria-hidden="true"></span><span class="reg reg--tr" aria-hidden="true"></span>
+          <div class="sheet-card__top">
+            <p class="viewtag"><span class="balloon balloon--sm" aria-hidden="true">B1</span>Detail B1</p>
+            <svg class="sheet-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <rect x="29" y="5" width="6" height="5"/>
+              <circle cx="32" cy="30" r="20"/>
+              <circle class="t" cx="32" cy="30" r="15.5"/>
+              <path class="t" d="M32 12.5v3M32 44.5v3M14.5 30h3M46.5 30h3M19.6 17.6l2.1 2.1M42.3 40.3l2.1 2.1M44.4 17.6l-2.1 2.1M21.7 40.3l-2.1 2.1"/>
+              <path d="M32 30l9-10"/>
+              <circle class="f" cx="32" cy="30" r="2.2"/>
+              <path d="M32 50v9M27 59h10"/>
+            </svg>
           </div>
           <h3>Preventive maintenance</h3>
           <p>A fixed schedule that catches wear before it costs you a shift. We build the task list around your equipment and OEM intervals, then run it on time, every time.</p>
-          <ul class="ticks">
+          <p class="incl">What&rsquo;s included</p>
+          <ol class="ticks">
             <li>Equipment register and PM schedule built for your plant</li>
             <li>Lubrication, belt/chain tensioning, alignment checks</li>
             <li>Bearing, gearbox, and drive inspections</li>
             <li>Vibration and thermal checks on critical assets</li>
             <li>Photo report, findings, and parts list after each visit</li>
-          </ul>
-          <p class="card__meta">Monthly, quarterly, or shutdown-based schedules</p>
+          </ol>
+          <dl class="mini-tb">
+            <dt>Schedule</dt>
+            <dd>Monthly, quarterly, or shutdown-based schedules</dd>
+          </dl>
         </article>
 
-        <article class="card card--featured">
-          <span class="card__flag">24/7</span>
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg>
+        <article class="sheet-card sheet-card--featured plate">
+          <span class="reg reg--tl" aria-hidden="true"></span><span class="reg reg--tr" aria-hidden="true"></span>
+          <div class="sheet-card__top">
+            <p class="viewtag"><span class="balloon balloon--sm" aria-hidden="true">B2</span>Detail B2</p>
+            <p class="flag cloud"><span>24/7</span></p>
           </div>
+          <svg class="sheet-card__icon sheet-card__icon--wide" viewBox="0 0 96 48" aria-hidden="true" focusable="false">
+            <path class="t cld" d="M2 24h92"/>
+            <path d="M8 13h30M8 35h30M8 13v22"/>
+            <path d="M38 13c-6 4 6 7 0 11c-6 4 6 7 0 11"/>
+            <path d="M52 13c6 4-6 7 0 11c6 4-6 7 0 11"/>
+            <path d="M52 13h36M52 35h36M88 13v22"/>
+            <path class="t" d="M44 3l-2 6 4 0-2 6"/>
+          </svg>
           <h3>Breakdown maintenance</h3>
           <p>When production stops, you get a millwright on the phone immediately and a crew rolling with a stocked truck. We diagnose, get you running, and tell you straight what it will take to keep it that way.</p>
-          <ul class="ticks">
+          <p class="incl">What&rsquo;s included</p>
+          <ol class="ticks">
             <li>24/7/365 dispatch &mdash; nights, weekends, holidays</li>
             <li>On-site diagnosis and emergency repair</li>
             <li>Bearing, shaft, coupling, and gearbox replacement</li>
             <li>Emergency welding, fabrication, and machining liaison</li>
-            <li>Root-cause notes so the same failure doesn't repeat</li>
-          </ul>
-          <p class="card__meta">Priority response for contract customers</p>
+            <li>Root-cause notes so the same failure doesn&rsquo;t repeat</li>
+          </ol>
+          <dl class="mini-tb">
+            <dt>Priority</dt>
+            <dd>Priority response for contract customers</dd>
+          </dl>
         </article>
 
-        <article class="card">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <article class="sheet-card">
+          <span class="reg reg--tl" aria-hidden="true"></span><span class="reg reg--tr" aria-hidden="true"></span>
+          <div class="sheet-card__top">
+            <p class="viewtag"><span class="balloon balloon--sm" aria-hidden="true">B3</span>Detail B3</p>
+            <svg class="sheet-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path class="w" d="M33.54 10.05A22 22 0 0 1 51.77 41.64"/>
+              <path class="m" d="M50.24 44.3A22 22 0 0 1 13.76 44.3"/>
+              <path class="d" d="M12.23 41.64A22 22 0 0 1 30.47 10.05"/>
+              <path class="t" d="M32 4v5M55.4 45.5l-4.3-2.5M8.6 45.5l4.3-2.5"/>
+              <path d="M32 32V18M32 32l9 6"/>
+              <circle class="f" cx="32" cy="32" r="2.2"/>
+            </svg>
           </div>
           <h3>Shift coverage</h3>
-          <p>A qualified millwright embedded on your floor for the shifts you can't fill &mdash; vacation, medical leave, a ramp-up, or a seat you're still hiring for.</p>
-          <ul class="ticks">
+          <p>A qualified millwright embedded on your floor for the shifts you can&rsquo;t fill &mdash; vacation, medical leave, a ramp-up, or a seat you&rsquo;re still hiring for.</p>
+          <p class="incl">What&rsquo;s included</p>
+          <ol class="ticks">
             <li>Days, afternoons, nights, and weekend shifts</li>
             <li>Short-term fill-in or ongoing rotation coverage</li>
             <li>Shutdown and changeover surge support</li>
             <li>Works to your procedures, LOTO, and safety program</li>
             <li>Shift handover notes to your maintenance lead</li>
-          </ul>
-          <p class="card__meta">Billed hourly or as a weekly block rate</p>
+          </ol>
+          <dl class="mini-tb">
+            <dt>Billing</dt>
+            <dd>Billed hourly or as a weekly block rate</dd>
+          </dl>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= CAPABILITIES ================= -->
-  <section class="section section--tint" id="capabilities">
+  <!-- ================= C · CAPABILITIES ================= -->
+  <section class="sec zone" id="capabilities" data-zone="C" aria-labelledby="caps-title">
     <div class="wrap">
-      <header class="section__head">
-        <p class="eyebrow">Capabilities</p>
-        <h2>Equipment and work we handle</h2>
-        <p class="section__sub">If it turns, conveys, fills, or packages &mdash; we've had our hands in it.</p>
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">C</span><p class="cut__label">Schedule C &middot; Capabilities</p><span class="cut__end cut__end--r" aria-hidden="true">C</span></div>
+        <div class="sec-head__row">
+          <h2 id="caps-title">Equipment and work we handle</h2>
+          <p class="sec-sub callout">If it turns, conveys, fills, or packages &mdash; we&rsquo;ve had our hands in it.</p>
+        </div>
       </header>
 
-      <div class="cols">
-        <div class="col">
-          <h3>Equipment</h3>
-          <ul class="pills">
+      <div class="bom">
+        <div class="bom__col">
+          <h3 class="bom__h"><span class="bom__id" aria-hidden="true">C1</span>Equipment</h3>
+          <div class="bom__cols" aria-hidden="true"><span>Item</span><span>Description</span></div>
+          <ul class="bom__list">
             <li>Conveyors &amp; material handling</li>
             <li>Gearboxes &amp; speed reducers</li>
             <li>Pumps &amp; blowers</li>
@@ -218,9 +425,10 @@
             <li>Hydraulic &amp; pneumatic systems</li>
           </ul>
         </div>
-        <div class="col">
-          <h3>Millwright work</h3>
-          <ul class="pills">
+        <div class="bom__col">
+          <h3 class="bom__h"><span class="bom__id" aria-hidden="true">C2</span>Millwright work</h3>
+          <div class="bom__cols" aria-hidden="true"><span>Item</span><span>Description</span></div>
+          <ul class="bom__list">
             <li>Alignment</li>
             <li>Precision levelling &amp; machine setting</li>
             <li>Bearing &amp; seal replacement</li>
@@ -231,9 +439,10 @@
             <li>Commissioning &amp; line relocations</li>
           </ul>
         </div>
-        <div class="col">
-          <h3>Industries</h3>
-          <ul class="pills">
+        <div class="bom__col">
+          <h3 class="bom__h"><span class="bom__id" aria-hidden="true">C3</span>Industries</h3>
+          <div class="bom__cols" aria-hidden="true"><span>Item</span><span>Description</span></div>
+          <ul class="bom__list">
             <li>Food &amp; beverage</li>
             <li>Plastics &amp; packaging</li>
             <li>Automotive</li>
@@ -248,75 +457,153 @@
     </div>
   </section>
 
-  <!-- ================= COVERAGE ================= -->
-  <section class="section" id="coverage">
-    <div class="wrap coverage">
-      <div class="coverage__copy">
-        <p class="eyebrow">Service area</p>
-        <h2>Based in the GTA. Growing across North America.</h2>
-        <p>
-          Today our crews run out of the Greater Toronto Area, which keeps response
-          times short and travel charges honest. As we add millwrights, we're expanding
-          into the rest of Ontario, then nationally across Canada and into the United States.
-        </p>
-        <p class="muted">Outside the current zone with a multi-site or shutdown need? Ask &mdash; we travel for the right scope.</p>
+  <!-- ================= D · COVERAGE ================= -->
+  <section class="sec zone" id="coverage" data-zone="D" aria-labelledby="cov-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">D</span><p class="cut__label">Plan D &middot; Service area</p><span class="cut__end cut__end--r" aria-hidden="true">D</span></div>
+      </header>
 
-        <ol class="roadmap">
-          <li class="roadmap__item is-now">
-            <span class="roadmap__dot" aria-hidden="true"></span>
-            <div><strong>Now &mdash; Greater Toronto Area</strong><span>Full PM, breakdown, and shift coverage</span></div>
-          </li>
-          <li class="roadmap__item">
-            <span class="roadmap__dot" aria-hidden="true"></span>
-            <div><strong>Next &mdash; Southern Ontario</strong><span>Hamilton to Kitchener&ndash;Waterloo, Niagara, Barrie</span></div>
-          </li>
-          <li class="roadmap__item">
-            <span class="roadmap__dot" aria-hidden="true"></span>
-            <div><strong>Then &mdash; Canada &amp; United States</strong><span>Multi-site programs and travelling shutdown crews</span></div>
-          </li>
-        </ol>
-      </div>
+      <div class="cov">
+        <div class="cov__copy">
+          <h2 id="cov-title">Based in the GTA. Growing across North America.</h2>
+          <p>
+            Today our crews run out of the Greater Toronto Area, which keeps response
+            times short and travel charges honest. As we add millwrights, we&rsquo;re expanding
+            into the rest of Ontario, then nationally across Canada and into the United States.
+          </p>
+          <p class="muted">Outside the current zone with a multi-site or shutdown need? Ask &mdash; we travel for the right scope.</p>
+        </div>
 
-      <div class="coverage__list">
-        <h3>Cities we cover today</h3>
-        <ul class="chips">
-          <li>Toronto</li><li>North York</li><li>Scarborough</li><li>Etobicoke</li>
-          <li>Mississauga</li><li>Brampton</li><li>Vaughan</li><li>Concord</li>
-          <li>Markham</li><li>Richmond Hill</li><li>Oakville</li><li>Burlington</li>
-          <li>Milton</li><li>Pickering</li><li>Ajax</li><li>Whitby</li>
-          <li>Oshawa</li><li>Newmarket</li><li>Aurora</li><li>Hamilton</li>
-        </ul>
-        <p class="coverage__note">Don't see your city? <a href="#quote">Send us the address</a> &mdash; if we can get there, we'll quote it.</p>
+        <div class="cov__road">
+          <h3 class="minor-h">Roadmap</h3>
+          <ol class="road">
+            <li class="road__item is-now">
+              <span class="road__when cloud">Now</span>
+              <strong>Greater Toronto Area</strong>
+              <span class="road__what">Full PM, breakdown, and shift coverage</span>
+            </li>
+            <li class="road__item">
+              <span class="road__when">Next</span>
+              <strong>Southern Ontario</strong>
+              <span class="road__what">Hamilton to Kitchener&ndash;Waterloo, Niagara, Barrie</span>
+            </li>
+            <li class="road__item">
+              <span class="road__when">Then</span>
+              <strong>Canada &amp; United States</strong>
+              <span class="road__what">Multi-site programs and travelling shutdown crews</span>
+            </li>
+          </ol>
+          <p class="legend" aria-hidden="true"><span class="legend__solid"></span>Existing <span class="legend__phantom"></span>Proposed</p>
+        </div>
+
+        <figure class="cov__plan" data-plot>
+          <svg class="plan" viewBox="0 0 880 470" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="lakeHatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10"/></pattern>
+            </defs>
+            <!-- lake -->
+            <path class="plan__lake" d="M0 426C120 420 170 418 240 414S420 408 520 406S760 400 880 398V470H0Z"/>
+            <path class="plan__shore" d="M0 426C120 420 170 418 240 414S420 408 520 406S760 400 880 398"/>
+            <rect class="plan__lakebg" x="556" y="432" width="158" height="24"/>
+            <text class="plan__lakelbl" x="635" y="449" text-anchor="middle">LAKE ONTARIO</text>
+
+            <!-- zone boundary (phantom line) -->
+            <rect class="plan__zone" x="10" y="8" width="862" height="378"/>
+            <text class="plan__zonelbl" x="26" y="30">SERVICE ZONE &#8212; NOW</text>
+
+            <!-- north arrow -->
+            <g class="plan__north" transform="translate(826 70)">
+              <circle r="20"/>
+              <path d="M0-16L7 10 0 5-7 10Z"/>
+              <text y="-27" text-anchor="middle">N</text>
+            </g>
+
+            <!-- lines -->
+            <g class="plan__lines">
+              <path class="trunk" pathLength="1" d="M50 300H780"/>
+              <path pathLength="1" d="M186 300V200M262 300V190M500 300V130"/>
+              <path pathLength="1" d="M420 300V28M300 130H500"/>
+            </g>
+
+            <!-- stations -->
+            <g class="plan__st">
+              <circle cx="50" cy="300" r="6"/><circle cx="118" cy="300" r="6"/><circle cx="186" cy="300" r="6"/><circle cx="262" cy="300" r="6"/><circle cx="340" cy="300" r="6"/><circle cx="500" cy="300" r="6"/><circle cx="582" cy="300" r="6"/><circle cx="648" cy="300" r="6"/><circle cx="714" cy="300" r="6"/><circle cx="780" cy="300" r="6"/><circle cx="186" cy="200" r="6"/><circle cx="262" cy="190" r="6"/><circle cx="420" cy="220" r="6"/><circle cx="300" cy="130" r="6"/><circle cx="360" cy="130" r="6"/><circle cx="420" cy="130" r="6"/><circle cx="500" cy="130" r="6"/><circle cx="420" cy="76" r="6"/><circle cx="420" cy="28" r="6"/>
+            </g>
+            <g class="plan__hub">
+              <circle cx="420" cy="300" r="11"/><circle class="in" cx="420" cy="300" r="5"/>
+            </g>
+
+            <!-- labels -->
+            <g class="plan__lbl">
+              <text transform="translate(56 318) rotate(35)">Hamilton</text>
+              <text transform="translate(124 318) rotate(35)">Burlington</text>
+              <text transform="translate(192 318) rotate(35)">Oakville</text>
+              <text transform="translate(268 318) rotate(35)">Mississauga</text>
+              <text transform="translate(346 318) rotate(35)">Etobicoke</text>
+              <text class="hub" transform="translate(430 322) rotate(35)">Toronto</text>
+              <text transform="translate(506 318) rotate(35)">Scarborough</text>
+              <text transform="translate(588 318) rotate(35)">Pickering</text>
+              <text transform="translate(654 318) rotate(35)">Ajax</text>
+              <text transform="translate(720 318) rotate(35)">Whitby</text>
+              <text transform="translate(786 318) rotate(35)">Oshawa</text>
+              <text x="174" y="205" text-anchor="end">Milton</text>
+              <text x="274" y="195">Brampton</text>
+              <text x="408" y="225" text-anchor="end">North York</text>
+              <text x="300" y="156" text-anchor="middle">Vaughan</text>
+              <text x="360" y="119" text-anchor="middle">Concord</text>
+              <text x="432" y="117">Richmond Hill</text>
+              <text x="512" y="135">Markham</text>
+              <text x="432" y="81">Aurora</text>
+              <text x="432" y="33">Newmarket</text>
+            </g>
+          </svg>
+          <figcaption class="viewtitle"><span>Plan D</span> Service area &mdash; schematic, not to scale</figcaption>
+        </figure>
+
+        <div class="cov__cities">
+          <h3 class="minor-h">Cities we cover today</h3>
+          <ul class="stations">
+            <li>Toronto</li><li>North York</li><li>Scarborough</li><li>Etobicoke</li>
+            <li>Mississauga</li><li>Brampton</li><li>Vaughan</li><li>Concord</li>
+            <li>Markham</li><li>Richmond Hill</li><li>Oakville</li><li>Burlington</li>
+            <li>Milton</li><li>Pickering</li><li>Ajax</li><li>Whitby</li>
+            <li>Oshawa</li><li>Newmarket</li><li>Aurora</li><li>Hamilton</li>
+          </ul>
+          <p class="cov__note"><span class="cov__note-tag" aria-hidden="true">Note</span>Don&rsquo;t see your city? <a href="#quote">Send us the address</a> &mdash; if we can get there, we&rsquo;ll quote it.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
-  <section class="section section--dark" id="process">
+  <!-- ================= E · PROCESS ================= -->
+  <section class="sec sec--plate plate zone" id="process" data-zone="E" aria-labelledby="process-title">
     <div class="wrap">
-      <header class="section__head section__head--center">
-        <p class="eyebrow">How it works</p>
-        <h2>Simple to start, easy to keep</h2>
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">E</span><p class="cut__label">Flow E &middot; How it works</p><span class="cut__end cut__end--r" aria-hidden="true">E</span></div>
+        <div class="sec-head__row">
+          <h2 id="process-title">Simple to start, easy to keep</h2>
+        </div>
       </header>
 
-      <ol class="steps">
-        <li class="step">
-          <span class="step__num">1</span>
-          <h3>Tell us what's running</h3>
-          <p>A 10-minute call or a short form. Equipment, shifts, and what's been hurting you lately.</p>
+      <ol class="flow">
+        <li class="flow__step">
+          <span class="flow__n" aria-hidden="true"><span class="balloon balloon--lg">1</span><span class="flow__of">Step 01 / 04</span></span>
+          <h3>Tell us what&rsquo;s running</h3>
+          <p>A 10-minute call or a short form. Equipment, shifts, and what&rsquo;s been hurting you lately.</p>
         </li>
-        <li class="step">
-          <span class="step__num">2</span>
+        <li class="flow__step">
+          <span class="flow__n" aria-hidden="true"><span class="balloon balloon--lg">2</span><span class="flow__of">Step 02 / 04</span></span>
           <h3>Free site walk</h3>
           <p>We walk the floor, list your critical assets, and flag the obvious risks before we quote anything.</p>
         </li>
-        <li class="step">
-          <span class="step__num">3</span>
+        <li class="flow__step">
+          <span class="flow__n" aria-hidden="true"><span class="balloon balloon--lg">3</span><span class="flow__of">Step 03 / 04</span></span>
           <h3>Clear written quote</h3>
           <p>Flat PM pricing, posted breakdown rates, and shift-coverage rates. No surprise line items.</p>
         </li>
-        <li class="step">
-          <span class="step__num">4</span>
+        <li class="flow__step">
+          <span class="flow__n" aria-hidden="true"><span class="balloon balloon--lg">4</span><span class="flow__of">Step 04 / 04</span></span>
           <h3>We show up and report</h3>
           <p>Scheduled PMs run on time, breakdowns get dispatched, and every visit ends with a written report and parts list.</p>
         </li>
@@ -324,188 +611,239 @@
     </div>
   </section>
 
-  <!-- ================= WHY US ================= -->
-  <section class="section section--tint" id="why">
+  <!-- ================= F · WHY ================= -->
+  <section class="sec zone" id="why" data-zone="F" aria-labelledby="why-title">
     <div class="wrap">
-      <header class="section__head">
-        <p class="eyebrow">Why Mechanic Do</p>
-        <h2>Built around uptime, not billable hours</h2>
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">F</span><p class="cut__label">Spec F &middot; Why Mechanic Do</p><span class="cut__end cut__end--r" aria-hidden="true">F</span></div>
+        <div class="sec-head__row">
+          <h2 id="why-title">Built around uptime, not billable hours</h2>
+        </div>
       </header>
-      <div class="grid-4">
-        <div class="feature">
+
+      <div class="spec">
+        <article class="spec__item">
+          <p class="fcf" aria-hidden="true">
+            <span class="fcf__c"><svg viewBox="0 0 20 20" focusable="false"><circle cx="10" cy="10" r="5.5"/><path d="M10 1.5v17M1.5 10h17"/></svg></span>
+            <span class="fcf__c">F.1</span><span class="fcf__c">Direct</span>
+          </p>
           <h3>You talk to a millwright</h3>
           <p>The person who answers the phone can actually diagnose the problem and tell you what to check before we arrive.</p>
-        </div>
-        <div class="feature">
+        </article>
+        <article class="spec__item">
+          <p class="fcf" aria-hidden="true">
+            <span class="fcf__c"><svg viewBox="0 0 20 20" focusable="false"><path d="M6 3 3 17M14 3l-3 14"/></svg></span>
+            <span class="fcf__c">F.2</span><span class="fcf__c">Record</span>
+          </p>
           <h3>Documented every visit</h3>
           <p>Photos, findings, corrective actions, and recommended parts &mdash; so your records survive staff turnover and audits.</p>
-        </div>
-        <div class="feature">
+        </article>
+        <article class="spec__item">
+          <p class="fcf" aria-hidden="true">
+            <span class="fcf__c"><svg viewBox="0 0 20 20" focusable="false"><path d="M6 6h12L14 14H2Z"/></svg></span>
+            <span class="fcf__c">F.3</span><span class="fcf__c">Flat</span>
+          </p>
           <h3>Transparent rates</h3>
           <p>Posted hourly, overtime, and emergency rates agreed up front. Travel and truck charges stated before we roll.</p>
-        </div>
-        <div class="feature">
+        </article>
+        <article class="spec__item">
+          <p class="fcf" aria-hidden="true">
+            <span class="fcf__c"><svg viewBox="0 0 20 20" focusable="false"><path d="M10 3v14M3 17h14"/></svg></span>
+            <span class="fcf__c">F.4</span><span class="fcf__c">Safe</span>
+          </p>
           <h3>Safety first, always</h3>
           <p>Fully insured and working to your lockout/tagout and contractor orientation on every site.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
-  <section class="section" id="faq">
-    <div class="wrap wrap--narrow">
-      <header class="section__head">
-        <p class="eyebrow">FAQ</p>
-        <h2>Questions we get a lot</h2>
+  <!-- ================= G · FAQ ================= -->
+  <section class="sec zone" id="faq" data-zone="G" aria-labelledby="faq-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">G</span><p class="cut__label">Notes G &middot; FAQ</p><span class="cut__end cut__end--r" aria-hidden="true">G</span></div>
       </header>
 
-      <div class="faq">
-        <details>
-          <summary>How fast can you get to us on a breakdown?</summary>
-          <p>Contract customers in the GTA get priority dispatch, with a target of 2&ndash;4 hours on site. For new customers we'll be straight with you on the phone about the soonest crew we can free up &mdash; often the same day.</p>
-        </details>
-        <details>
-          <summary>Do we have to sign a long contract?</summary>
-          <p>No. Preventive maintenance runs on a simple monthly agreement you can cancel with 30 days' notice, and breakdown or shift work can be booked purely as needed.</p>
-        </details>
-        <details>
-          <summary>Can you cover a night or weekend shift regularly?</summary>
-          <p>Yes. Shift coverage is available on days, afternoons, nights, and weekends &mdash; as a one-off fill-in or an ongoing rotation while you recruit.</p>
-        </details>
-        <details>
-          <summary>Do you supply parts?</summary>
-          <p>We can source and supply parts, or install parts you've already stocked. Either way you get the part numbers in writing so you can build a critical spares list.</p>
-        </details>
-        <details>
-          <summary>Are you insured?</summary>
-          <p>Yes. We carry commercial general liability insurance, and we'll send certificates and complete your contractor pre-qualification before the first visit.</p>
-        </details>
-        <details>
-          <summary>We have sites outside the GTA &mdash; can you still help?</summary>
-          <p>Often, yes. We're expanding through Southern Ontario and then across Canada and the US. For multi-site programs and shutdowns we already travel &mdash; send us the locations and we'll tell you honestly what we can cover.</p>
-        </details>
+      <div class="faq-grid">
+        <div class="faq-grid__head">
+          <h2 id="faq-title">Questions we get a lot</h2>
+          <p class="faq-grid__call">Line down instead? <a href="tel:+16470000000">Call (647) 000-0000</a></p>
+        </div>
+
+        <div class="faq">
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q1</span><span class="qa__q">How fast can you get to us on a breakdown?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>Contract customers in the GTA get priority dispatch, with a target of 2&ndash;4 hours on site. For new customers we&rsquo;ll be straight with you on the phone about the soonest crew we can free up &mdash; often the same day.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q2</span><span class="qa__q">Do we have to sign a long contract?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>No. Preventive maintenance runs on a simple monthly agreement you can cancel with 30 days&rsquo; notice, and breakdown or shift work can be booked purely as needed.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q3</span><span class="qa__q">Can you cover a night or weekend shift regularly?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>Yes. Shift coverage is available on days, afternoons, nights, and weekends &mdash; as a one-off fill-in or an ongoing rotation while you recruit.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q4</span><span class="qa__q">Do you supply parts?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>We can source and supply parts, or install parts you&rsquo;ve already stocked. Either way you get the part numbers in writing so you can build a critical spares list.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q5</span><span class="qa__q">Are you insured?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>Yes. We carry commercial general liability insurance, and we&rsquo;ll send certificates and complete your contractor pre-qualification before the first visit.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span class="qa__n" aria-hidden="true">Q6</span><span class="qa__q">We have sites outside the GTA &mdash; can you still help?</span><span class="qa__x" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>Often, yes. We&rsquo;re expanding through Southern Ontario and then across Canada and the US. For multi-site programs and shutdowns we already travel &mdash; send us the locations and we&rsquo;ll tell you honestly what we can cover.</p></div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= QUOTE / CONTACT ================= -->
-  <section class="section section--dark" id="quote">
-    <div class="wrap quote">
-      <div class="quote__copy">
-        <p class="eyebrow">Get started</p>
-        <h2>Request a quote or book a site walk</h2>
-        <p>Tell us a bit about your plant and we'll come back within one business day. If your line is down right now, call &mdash; don't fill in a form.</p>
+  <!-- ================= H · QUOTE ================= -->
+  <section class="sec sec--quote zone" id="quote" data-zone="H" aria-labelledby="quote-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="cut"><span class="cut__end" aria-hidden="true">H</span><p class="cut__label">Form H &middot; Get started</p><span class="cut__end cut__end--r" aria-hidden="true">H</span></div>
+      </header>
 
-        <ul class="contact-list">
-          <li>
-            <span class="contact-list__label">24/7 dispatch</span>
-            <a href="tel:+16470000000">(647) 000-0000</a>
-          </li>
-          <li>
-            <span class="contact-list__label">Email</span>
-            <a href="mailto:dispatch@mechanicdo.ca">dispatch@mechanicdo.ca</a>
-          </li>
-          <li>
-            <span class="contact-list__label">Service area</span>
-            <span>Greater Toronto Area &mdash; expanding across Ontario</span>
-          </li>
-          <li>
-            <span class="contact-list__label">Office hours</span>
-            <span>Mon&ndash;Fri 7:00&ndash;17:00 &middot; Emergency line always open</span>
-          </li>
-        </ul>
+      <div class="quote">
+        <div class="quote__copy">
+          <h2 id="quote-title">Request a quote or book a site walk</h2>
+          <p>Tell us a bit about your plant and we&rsquo;ll come back within one business day. <strong>If your line is down right now, call &mdash; don&rsquo;t fill in a form.</strong></p>
+
+          <ul class="contact">
+            <li>
+              <span class="contact__k">24/7 dispatch</span>
+              <a class="contact__v contact__v--big" href="tel:+16470000000">(647) 000-0000</a>
+            </li>
+            <li>
+              <span class="contact__k">Email</span>
+              <a class="contact__v" href="mailto:dispatch@mechanicdo.ca">dispatch@mechanicdo.ca</a>
+            </li>
+            <li>
+              <span class="contact__k">Service area</span>
+              <span class="contact__v">Greater Toronto Area &mdash; expanding across Ontario</span>
+            </li>
+            <li>
+              <span class="contact__k">Office hours</span>
+              <span class="contact__v">Mon&ndash;Fri 7:00&ndash;17:00 &middot; Emergency line always open</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="rfq" id="quoteForm" novalidate>
+          <div class="rfq__head" aria-hidden="true">
+            <span>Form RFQ-1</span><span>Request for quote / site walk</span><span>* Required</span>
+          </div>
+          <div class="rfq__grid">
+            <div class="cell cell--full">
+              <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="cell">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+            <div class="cell">
+              <label for="city">Site city <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="e.g. Mississauga" required>
+            </div>
+            <div class="cell">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="cell">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <fieldset class="cell cell--full">
+              <legend>What do you need?</legend>
+              <div class="checks">
+                <label class="check"><input type="checkbox" name="service" value="Preventive maintenance"><span class="check__box" aria-hidden="true"></span>Preventive maintenance</label>
+                <label class="check"><input type="checkbox" name="service" value="Breakdown maintenance"><span class="check__box" aria-hidden="true"></span>Breakdown maintenance</label>
+                <label class="check"><input type="checkbox" name="service" value="Shift coverage"><span class="check__box" aria-hidden="true"></span>Shift coverage</label>
+                <label class="check"><input type="checkbox" name="service" value="Not sure yet"><span class="check__box" aria-hidden="true"></span>Not sure yet</label>
+              </div>
+            </fieldset>
+            <div class="cell cell--full">
+              <label for="message">Tell us about the equipment or the problem</label>
+              <textarea id="message" name="message" rows="4" placeholder="Lines, equipment types, shift pattern, and anything that keeps failing."></textarea>
+            </div>
+          </div>
+
+          <!-- Honeypot: hidden from people, tempting to bots -->
+          <div class="hp" aria-hidden="true">
+            <label for="company_website">Leave this field empty</label>
+            <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="rfq__foot">
+            <button class="btn btn--ink btn--block btn--lg" type="submit">Send request <span class="btn__arw" aria-hidden="true"></span></button>
+            <p class="form-note" id="formNote" role="status">We reply within one business day. Line down now? Call <a href="tel:+16470000000">(647) 000-0000</a>.</p>
+          </div>
+        </form>
       </div>
-
-      <form class="quote__form" id="quoteForm" novalidate>
-        <div class="field">
-          <label for="name">Name <span aria-hidden="true">*</span></label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="city">Site city <span aria-hidden="true">*</span></label>
-            <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="e.g. Mississauga" required>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
-          </div>
-        </div>
-        <fieldset class="field">
-          <legend>What do you need?</legend>
-          <div class="checks">
-            <label><input type="checkbox" name="service" value="Preventive maintenance"> Preventive maintenance</label>
-            <label><input type="checkbox" name="service" value="Breakdown maintenance"> Breakdown maintenance</label>
-            <label><input type="checkbox" name="service" value="Shift coverage"> Shift coverage</label>
-            <label><input type="checkbox" name="service" value="Not sure yet"> Not sure yet</label>
-          </div>
-        </fieldset>
-        <div class="field">
-          <label for="message">Tell us about the equipment or the problem</label>
-          <textarea id="message" name="message" rows="4" placeholder="Lines, equipment types, shift pattern, and anything that keeps failing."></textarea>
-        </div>
-
-        <!-- Honeypot: hidden from people, tempting to bots -->
-        <div class="hp" aria-hidden="true">
-          <label for="company_website">Leave this field empty</label>
-          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
-        </div>
-
-        <button class="btn btn--primary btn--block btn--lg" type="submit">Send request</button>
-        <p class="form-note" id="formNote" role="status">We reply within one business day. Line down now? Call <a href="tel:+16470000000">(647) 000-0000</a>.</p>
-      </form>
     </div>
   </section>
 
+  <div class="ruler ruler--bottom" aria-hidden="true">
+    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+  </div>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer__inner">
-    <div class="footer__brand">
-      <span class="brand__text brand__text--footer"><span class="brand__name">Mechanic <span class="brand__do">Do</span></span><small>Millwright Services</small></span>
+<!-- ============ FOOTER / TITLE BLOCK ============ -->
+<footer class="tb">
+  <h2 class="sr-only">Site information</h2>
+  <div class="tb__grid">
+    <div class="tb__brand">
+      <span class="brand brand--foot">
+        <span class="brand__word">Mechanic</span>
+        <span class="brand__leader" aria-hidden="true"></span>
+        <span class="brand__balloon">Do</span>
+        <span class="brand__sub">Millwright services</span>
+      </span>
       <p>Industrial millwright services for the Greater Toronto Area &mdash; preventive maintenance, breakdown response, and shift coverage.</p>
     </div>
-    <nav class="footer__nav" aria-label="Footer">
-      <div>
+    <nav class="tb__nav" aria-label="Footer">
+      <div class="tb__col">
         <h3>Services</h3>
         <a href="#services">Preventive maintenance</a>
         <a href="#services">Breakdown maintenance</a>
         <a href="#services">Shift coverage</a>
       </div>
-      <div>
+      <div class="tb__col">
         <h3>Company</h3>
         <a href="#coverage">Service area</a>
         <a href="#process">How it works</a>
         <a href="#faq">FAQ</a>
       </div>
-      <div>
+      <div class="tb__col">
         <h3>Contact</h3>
         <a href="tel:+16470000000">(647) 000-0000</a>
         <a href="mailto:dispatch@mechanicdo.ca">dispatch@mechanicdo.ca</a>
         <a href="#quote">Request a quote</a>
       </div>
     </nav>
+    <dl class="tb__meta" aria-hidden="true">
+      <div class="tb__m tb__m--title"><dt>Title</dt><dd>Industrial millwright services</dd></div>
+      <div class="tb__m"><dt>Drawn by</dt><dd>Mechanic Do</dd></div>
+      <div class="tb__m"><dt>Scale</dt><dd>GTA</dd></div>
+      <div class="tb__m"><dt>Sheet</dt><dd>1 of 1</dd></div>
+      <div class="tb__m tb__m--rev"><dt>Rev</dt><dd>C</dd></div>
+    </dl>
   </div>
-  <div class="wrap footer__bottom">
+  <div class="tb__legal">
     <p>&copy; <span id="year">2026</span> Mechanic Do Millwright Services. All rights reserved.</p>
     <p>Serving Toronto, Mississauga, Brampton, Vaughan, Markham, Oakville, Hamilton &amp; the GTA.</p>
   </div>
 </footer>
 
-<a class="call-fab" href="tel:+16470000000" aria-label="Call dispatch">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
-  <span>Call 24/7</span>
+<a class="callbar" href="tel:+16470000000">
+  <svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
+  <span class="callbar__lbl"><span class="callbar__pre">Line down? </span>Call 24/7</span>
+  <span class="callbar__num">(647) 000-0000</span>
 </a>
 
 <script src="assets/js/main.js" defer></script>

@@ -2,12 +2,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#11171b"/>
-      <stop offset="1" stop-color="#162026"/>
+      <stop offset="0" stop-color="#0f3c69"/>
+      <stop offset="1" stop-color="#0b2e52"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.85" cy="0.05" r="0.7">
-      <stop offset="0" stop-color="#f5a303" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#f5a303" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ff9a85" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ff9a85" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
@@ -18,18 +18,18 @@
   <rect width="1200" height="630" fill="url(#grid)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <g transform="translate(80 86)" fill="#f5a303">
+  <g transform="translate(80 86)" fill="#ff9a85">
     <g transform="scale(1.5)">
       <path d="M20 3a17 17 0 1 0 0 34 17 17 0 0 0 0-34Zm0 5.5a11.5 11.5 0 0 1 11.2 9h-7.4a4.5 4.5 0 0 0-3.8-2.2 4.5 4.5 0 0 0-3.8 2.2H8.8A11.5 11.5 0 0 1 20 8.5Z"/>
-      <circle cx="20" cy="20" r="4.2" fill="none" stroke="#f5a303" stroke-width="2.6"/>
-      <path d="M20 24.2V34M11.5 28.5l4-4M28.5 28.5l-4-4" stroke="#f5a303" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="4.2" fill="none" stroke="#ff9a85" stroke-width="2.6"/>
+      <path d="M20 24.2V34M11.5 28.5l4-4M28.5 28.5l-4-4" stroke="#ff9a85" stroke-width="2.6" stroke-linecap="round"/>
     </g>
   </g>
 
   <text x="152" y="122" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">
-    Mechanic <tspan fill="#f5a303">Do</tspan>
+    Mechanic <tspan fill="#ff9a85">Do</tspan>
   </text>
-  <text x="152" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="4" fill="#8f9ca3">
+  <text x="152" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="4" fill="#b9cde3">
     MILLWRIGHT SERVICES
   </text>
 
@@ -40,13 +40,13 @@
     your line running.
   </text>
 
-  <text x="80" y="452" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#b7c3ca">
+  <text x="80" y="452" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#dbe6f2">
     Preventive maintenance &#183; Breakdown response &#183; Shift coverage
   </text>
 
-  <rect x="80" y="500" width="360" height="6" rx="3" fill="#f5a303"/>
+  <rect x="80" y="500" width="360" height="6" rx="3" fill="#ff9a85"/>
 
-  <text x="80" y="562" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#f5a303">
+  <text x="80" y="562" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ff9a85">
     Greater Toronto Area &#183; 24/7 dispatch
   </text>
 </svg>

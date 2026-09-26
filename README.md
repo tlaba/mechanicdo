@@ -6,6 +6,9 @@ maintenance**, and **shift coverage**. Positioned for the **GTA** first, with a 
 expansion path to the rest of Ontario, Canada, and the US.
 
 Plain HTML, CSS, and JavaScript — no build step, no framework, no dependencies.
+The design is an engineering drawing: drafting-paper grid, section-cut markers,
+dimension-line callouts, a bill-of-materials capabilities list, a schematic
+service-area plan, and a title-block footer.
 Open `index.html` in a browser and it works.
 
 ---
@@ -36,7 +39,6 @@ sed -i 's/(647) 000-0000/(416) 555-1234/g; s/+16470000000/+14165551234/g' index.
 These read as statements of fact to a customer and to a plant's procurement team.
 Keep them only if they're true today; edit or delete them otherwise.
 
-- **"Licensed 433A millwrights"** — hero trust strip, `index.html`
 - **"Fully insured"** — hero trust strip, "Why Mechanic Do", FAQ
 - **Response targets: "2–4 hrs" for contract customers, "same day" for new** — hero card, FAQ
 - **"24/7/365 dispatch"** — top bar, hero, services, footer. Only promise the hours you'll actually answer.
@@ -110,6 +112,7 @@ index.html              The whole site — every section lives here
 404.html                Not-found page (GitHub Pages picks this up automatically)
 assets/css/styles.css   All styling, organised by section, responsive + print styles
 assets/js/main.js       Nav, scroll effects, form validation and submission
+assets/fonts/           Self-hosted Archivo + Martian Mono (variable woff2, OFL)
 assets/img/favicon.svg  Browser tab icon
 assets/img/og-image.svg Social sharing card artwork (see note below)
 robots.txt, sitemap.xml Search engine basics — update the domain
@@ -158,8 +161,8 @@ When you're ready for more, the natural next steps are:
 
 ## Editing tips
 
-- The colour palette is six variables at the top of `styles.css` (`--amber` is the
-  accent; change it once and the whole site follows).
+- The colour palette lives in custom properties at the top of `styles.css`: paper,
+  ink, annotation cyan, blueprint plate, and redline (the CTA / emphasis colour).
 - Sections are separated by clear comment banners in both `index.html` and `styles.css`.
 - Every section is a `<section id="...">`, so nav links, anchors, and the scroll-spy
   all keep working if you reorder them.
