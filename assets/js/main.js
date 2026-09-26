@@ -202,7 +202,7 @@
       '?subject=' + encodeURIComponent('Quote request — ' + (data.company || data.name)) +
       '&body=' + encodeURIComponent(body);
 
-    showNote('Your email app should be opening with the details filled in. If nothing happens, email us at <a href="mailto:' +
+    showNote('Your email app should be opening with the details filled in. If nothing happens, email me at <a href="mailto:' +
       CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>.', 'is-ok');
   }
 
@@ -237,7 +237,7 @@
       .then(function (res) {
         if (!res.ok) throw new Error('Request failed: ' + res.status);
         form.reset();
-        showNote('Thanks — we’ve got it. Expect a reply within one business day.', 'is-ok');
+        showNote('Thanks — I’ve got it. Expect a reply within one business day.', 'is-ok');
       })
       .catch(function () {
         showNote('That didn’t send. Please call <a href="tel:+16470000000">(647) 000-0000</a> or email <a href="mailto:' +
