@@ -41,7 +41,6 @@ Keep them only if they're true today; edit or delete them otherwise.
 
 - **"Fully insured"** — hero trust strip, "Why Mechanic Do", FAQ
 - **Response targets: "2–4 hrs" for contract customers, "same day" for new** — hero card, FAQ
-- **"24/7/365 dispatch"** — top bar, hero, services, footer. Only promise the hours you'll actually answer.
 - **"30 days' notice" cancellation** on PM agreements — FAQ
 - **Industry list** in the Capabilities section — trim to what you've genuinely worked in.
 
