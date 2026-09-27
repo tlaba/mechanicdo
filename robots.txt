@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tlaba.github.io/mechanicdo/sitemap.xml
+Sitemap: https://mechanicdo.ca/sitemap.xml

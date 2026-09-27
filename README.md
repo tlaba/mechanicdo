@@ -23,7 +23,7 @@ cancellation terms, industries — has been confirmed by the owner.)
 |---|---|---|
 | Phone number | `(647) 000-0000` / `+16470000000` | `index.html`, `404.html`, `assets/js/main.js` |
 | Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
-| Site URL | `https://tlaba.github.io/mechanicdo/` (until a domain is bought) | `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
+| Site URL | `https://mechanicdo.ca/` (live) | `CNAME`, `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
 | Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
 | Office hours | `Mon–Fri 7:00–17:00` | `index.html` (contact list) |
 
@@ -61,7 +61,7 @@ it quietly eats a lot of bot spam.
 
 **GitHub Pages** (free, no account beyond GitHub) — the site is already on `main`:
 1. Repo → **Settings** → **Pages** → Source: *Deploy from a branch* → `main` / `/ (root)` → **Save**.
-2. Wait about a minute. The site goes live at `https://tlaba.github.io/mechanicdo/`.
+2. Wait about a minute. The site goes live at `https://tlaba.github.io/mechanicdo/` (now redirects to `https://mechanicdo.ca/`).
 3. When you have the domain: same page, **Custom domain**, then add a `CNAME`
    record at your registrar pointing `www` at `tlaba.github.io`. For the bare
    domain (`mechanicdo.ca` with no `www`) add four `A` records instead, pointing at
@@ -70,9 +70,9 @@ it quietly eats a lot of bot spam.
    you type them in — GitHub has changed them before).
    Tick **Enforce HTTPS** once the certificate is issued.
 
-> **When you move to your own domain:** replace `https://tlaba.github.io/mechanicdo/`
-> with the new address in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`,
-> and `sitemap.xml`, so search engines index the new address rather than the old one.
+> **Custom domain:** `mechanicdo.ca` is connected through the `CNAME` file in the repo root
+> (don't delete it). DNS lives at Namecheap: four `A` records on `@` pointing at GitHub, a
+> `CNAME` on `www` pointing at `tlaba.github.io`, and `mechanicdo.com` redirecting to the `.ca`.
 
 **Netlify / Cloudflare Pages / Vercel:** connect the repo, leave the build command
 empty, set the publish directory to `/`. Done.
