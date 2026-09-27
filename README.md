@@ -15,8 +15,9 @@ Open `index.html` in a browser and it works.
 
 ## ⚠️ Before you publish — edit these
 
-The site ships with **placeholder contact details and unverified claims**. Go through
-this list first; nothing here is a design decision, it's all business facts only you know.
+The site ships with **placeholder contact details**. Swap these for the real ones.
+(Every claim on the page — licensing, insurance, 24/7 dispatch, response targets,
+cancellation terms, industries — has been confirmed by the owner.)
 
 | What | Placeholder in the code | Where |
 |---|---|---|
@@ -33,16 +34,6 @@ grep -rl '647) 000-0000\|+16470000000\|dispatch@mechanicdo.ca' . --exclude-dir=.
 # then, once you've eyeballed the list:
 sed -i 's/(647) 000-0000/(416) 555-1234/g; s/+16470000000/+14165551234/g' index.html 404.html assets/js/main.js
 ```
-
-### Claims to confirm or remove
-
-These read as statements of fact to a customer and to a plant's procurement team.
-Keep them only if they're true today; edit or delete them otherwise.
-
-- **"Fully insured"** — hero trust strip, "Why Mechanic Do", FAQ
-- **Response targets: "2–4 hrs" for contract customers, "same day" for new** — hero card, FAQ
-- **"30 days' notice" cancellation** on PM agreements — FAQ
-- **Industry list** in the Capabilities section — trim to what you've genuinely worked in.
 
 ---
 
