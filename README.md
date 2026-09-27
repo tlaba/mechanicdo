@@ -23,7 +23,7 @@ cancellation terms, industries — has been confirmed by the owner.)
 |---|---|---|
 | Phone number | `(647) 000-0000` / `+16470000000` | `index.html`, `404.html`, `assets/js/main.js` |
 | Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
-| Domain | `https://mechanicdo.ca/` | `index.html`, `robots.txt`, `sitemap.xml` |
+| Site URL | `https://tlaba.github.io/mechanicdo/` (until a domain is bought) | `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
 | Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
 | Office hours | `Mon–Fri 7:00–17:00` | `index.html` (contact list) |
 
@@ -70,11 +70,9 @@ it quietly eats a lot of bot spam.
    you type them in — GitHub has changed them before).
    Tick **Enforce HTTPS** once the certificate is issued.
 
-> **While you're on the `tlaba.github.io` URL:** the canonical, Open Graph, and
-> JSON-LD tags in `index.html`, plus `robots.txt` and `sitemap.xml`, all still point
-> at `https://mechanicdo.ca/`. That's harmless for a site nobody has linked to yet,
-> but update them when you settle the domain — a canonical tag pointing at a domain
-> you don't own tells Google to index that address instead of the live one.
+> **When you move to your own domain:** replace `https://tlaba.github.io/mechanicdo/`
+> with the new address in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`,
+> and `sitemap.xml`, so search engines index the new address rather than the old one.
 
 **Netlify / Cloudflare Pages / Vercel:** connect the repo, leave the build command
 empty, set the publish directory to `/`. Done.
