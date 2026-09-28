@@ -237,7 +237,7 @@
       .then(function (res) {
         if (!res.ok) throw new Error('Request failed: ' + res.status);
         form.reset();
-        showNote('Thanks — I’ve got it. Expect a reply within one business day.', 'is-ok');
+        showNote('Thanks — I’ve got it. Expect a reply within one day.', 'is-ok');
       })
       .catch(function () {
         showNote('That didn’t send. Please call <a href="tel:+16470000000">(647) 000-0000</a> or email <a href="mailto:' +

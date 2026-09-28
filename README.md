@@ -25,7 +25,7 @@ cancellation terms, industries — has been confirmed by the owner.)
 | Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
 | Site URL | `https://mechanicdo.ca/` (live) | `CNAME`, `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
 | Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
-| Office hours | `Mon–Fri 7:00–17:00` | `index.html` (contact list) |
+| Office hours | `Mon–Fri 5 pm–midnight · Sat–Sun 6 am–midnight` (confirmed) | `index.html` (contact list) |
 
 Fast find-and-replace for the phone and email:
 
