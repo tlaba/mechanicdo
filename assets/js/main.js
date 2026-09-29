@@ -240,7 +240,7 @@
         showNote('Thanks — I’ve got it. Expect a reply within one day.', 'is-ok');
       })
       .catch(function () {
-        showNote('That didn’t send. Please call <a href="tel:+16470000000">(647) 000-0000</a> or email <a href="mailto:' +
+        showNote('That didn’t send. Please call <a href="tel:+14378817808">(437) 881-7808</a> or email <a href="mailto:' +
           CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>.', 'is-error');
       })
       .finally(function () {

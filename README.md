@@ -15,24 +15,22 @@ Open `index.html` in a browser and it works.
 
 ## ⚠️ Before you publish — edit these
 
-The site ships with **placeholder contact details**. Swap these for the real ones.
+Contact details on the site — all real and live:
 (Every claim on the page — licensing, insurance, 24/7 dispatch, response targets,
 cancellation terms, industries — has been confirmed by the owner.)
 
 | What | Placeholder in the code | Where |
 |---|---|---|
-| Phone number | `(647) 000-0000` / `+16470000000` | `index.html`, `404.html`, `assets/js/main.js` |
+| Phone number | `(437) 881-7808` / `+14378817808` (live) | `index.html`, `404.html`, `assets/js/main.js` |
 | Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
 | Site URL | `https://mechanicdo.ca/` (live) | `CNAME`, `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
 | Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
 | Office hours | `Mon–Fri 5 pm–midnight · Sat–Sun 6 am–midnight` (confirmed) | `index.html` (contact list) |
 
-Fast find-and-replace for the phone and email:
+To change the phone number later, replace both spellings everywhere:
 
 ```bash
-grep -rl '647) 000-0000\|+16470000000\|dispatch@mechanicdo.ca' . --exclude-dir=.git
-# then, once you've eyeballed the list:
-sed -i 's/(647) 000-0000/(416) 555-1234/g; s/+16470000000/+14165551234/g' index.html 404.html assets/js/main.js
+sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-437-881-7808/+1-NEW-NEW-NUMB/g' index.html 404.html assets/js/main.js
 ```
 
 ---
