@@ -17,7 +17,7 @@
      opening the visitor's email client with everything
      pre-filled — no submissions are lost either way.
      ---------------------------------------------------------- */
-  var FORM_ENDPOINT = '';
+  var FORM_ENDPOINT = 'https://formspree.io/f/mrpbjlrz';
   var CONTACT_EMAIL = 'dispatch@mechanicdo.ca';
 
   var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
@@ -219,6 +219,7 @@
 
     var data = collect();
     var submitBtn = $('button[type="submit"]', form);
+    var submitHTML = submitBtn.innerHTML;
 
     if (!FORM_ENDPOINT) {
       mailtoFallback(data);
@@ -232,7 +233,12 @@
     fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      // _subject / _replyto are Formspree fields: a readable subject line, and
+      // hitting Reply in your inbox answers the customer directly.
+      body: JSON.stringify(Object.assign({}, data, {
+        _subject: 'Quote request — ' + (data.company || data.name) + ' (' + data.city + ')',
+        _replyto: data.email
+      }))
     })
       .then(function (res) {
         if (!res.ok) throw new Error('Request failed: ' + res.status);
@@ -245,7 +251,7 @@
       })
       .finally(function () {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send request';
+        submitBtn.innerHTML = submitHTML;
         setTimeout(function () {
           if (!note.classList.contains('is-ok')) showNote(defaultNote);
         }, 9000);
