@@ -35,23 +35,14 @@ sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-43
 
 ---
 
-## Making the quote form actually send
+## Quote form
 
-Out of the box the form validates, then opens the visitor's email app with everything
-pre-filled. That works on day one with zero setup, but it loses people who don't have
-a mail client configured.
-
-For real submissions, sign up with a form service (Formspree, Formsubmit, Basin,
-Getform — all have free tiers), then set one line at the top of `assets/js/main.js`:
-
-```js
-var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_ID';
-var CONTACT_EMAIL = 'dispatch@mechanicdo.ca';
-```
-
-The form POSTs JSON, shows a success message, and falls back to a "call us" message
-if the request fails. The hidden `company_website` field is a honeypot — leave it in,
-it quietly eats a lot of bot spam.
+The form posts to Formspree (`https://formspree.io/f/mrpbjlrz`, set at the top of
+`assets/js/main.js` as `FORM_ENDPOINT`). Formspree emails each request to
+dispatch@mechanicdo.ca, which forwards to Gmail. The subject line names the company
+and city, and Reply goes straight to the customer. The free plan covers about 50
+submissions a month. If a send fails, the visitor is told to call or email instead.
+Clear `FORM_ENDPOINT` to fall back to opening the visitor's email app.
 
 ---
 
