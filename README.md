@@ -1,8 +1,9 @@
 # Mechanic Do — Millwright Services website
 
 A fast, single-page marketing site for an industrial millwright business, built around
-the three services you're starting with: **preventive maintenance**, **breakdown
-maintenance**, and **shift coverage**. Positioned for the **GTA** first, with a visible
+four services: **preventive maintenance**, **breakdown maintenance**, **shift
+coverage**, and **maintenance management** (work orders, PM programs, planning and
+the CMMS behind them). Positioned for the **GTA** first, with a visible
 expansion path to the rest of Ontario, Canada, and the US.
 
 Plain HTML, CSS, and JavaScript — no build step, no framework, no dependencies.
@@ -31,6 +32,20 @@ To change the phone number later, replace both spellings everywhere:
 
 ```bash
 sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-437-881-7808/+1-NEW-NEW-NUMB/g' index.html 404.html assets/js/main.js
+```
+
+
+### PEMAC credential wording
+
+The owner is **completing** PEMAC's Maintenance Management Professional (MMP) program.
+The site says exactly that in three places: hero note 5, the "Training" row on the B4
+sheet, and the FAQ answer to Q7. Don't shorten it to "MMP" or "certified" until PEMAC
+awards the designation. Once it's awarded, change "Completing PEMAC's Maintenance
+Management Professional (MMP) program" to "PEMAC Maintenance Management Professional
+(MMP)", and the FAQ sentence to past tense:
+
+```bash
+grep -n "Maintenance Management Professional" index.html
 ```
 
 ---
@@ -99,7 +114,8 @@ robots.txt, sitemap.xml Search engine basics — update the domain
 ### Page sections
 
 1. **Hero** — headline, dual CTA (quote / call), trust strip, and a "line down right now?" dispatch card
-2. **Services** — the three offerings, each with a concrete "what's included" list
+2. **Services** — four detail sheets (B1–B4), each with a concrete "what's included" list;
+   B4, maintenance management, is a full-width sheet for the planning side of the work
 3. **Capabilities** — equipment, millwright work, and industries, so buyers self-qualify
 4. **Coverage** — GTA cities today plus a three-stage expansion roadmap (Ontario → Canada → US)
 5. **How it works** — four steps from first call to written report
