@@ -1049,7 +1049,17 @@ h1 {
   .sheet-card--wide .sheet-card__cols { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); column-gap: 44px; }
   .ticks--2col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
 }
-/* hero note 5 (the credential) runs the full width of the notes block */
+/* a title block with several rows (B4's training record) gets ruled lines between rows */
+.mini-tb dt:not(:first-of-type),
+.mini-tb dd:not(:first-of-type) { border-top: 1px solid var(--ink); }
+/* on phones, B4's training record stacks each label over its text */
+@media (max-width: 559.98px) {
+  .sheet-card--wide .mini-tb { grid-template-columns: minmax(0, 1fr); }
+  .sheet-card--wide .mini-tb dt { border-right: 0; padding-bottom: 2px; }
+  .sheet-card--wide .mini-tb dd { padding: 2px 26px 13px; }
+  .sheet-card--wide .mini-tb dd:not(:first-of-type) { border-top: 0; }
+}
+/* hero notes 5 and 6 (the PEMAC credentials) run the full width of the notes block */
 .notes__list .notes__wide { grid-column: 1 / -1; }
 
 /* featured: Breakdown is the blueprint print */

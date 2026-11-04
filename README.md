@@ -37,12 +37,20 @@ sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-43
 
 ### PEMAC credential wording
 
-The owner is **completing** PEMAC's Maintenance Management Professional (MMP) program.
-The site says exactly that in three places: hero note 5, the "Training" row on the B4
-sheet, and the FAQ answer to Q7. Don't shorten it to "MMP" or "certified" until PEMAC
-awards the designation. Once it's awarded, change "Completing PEMAC's Maintenance
-Management Professional (MMP) program" to "PEMAC Maintenance Management Professional
-(MMP)", and the FAQ sentence to past tense:
+What the owner holds, and how the site words it:
+
+- **Awarded:** PEMAC's Maintenance Work Management and Maintenance Strategy Development
+  **Certificates of Achievement**: hero note 5, the "Certificates" row on the B4 sheet,
+  and FAQ Q7.
+- **Completed:** MMP Module 7, described as "maintenance information management and CMMS"
+  because PEMAC renamed that module, and the older title was "Computerized Maintenance
+  Management Systems".
+- **In progress:** the full Maintenance Management Professional (MMP) program: hero
+  note 6, the "In progress" row on B4, and FAQ Q7.
+
+Never shorten any of this to "MMP" or "certified" until PEMAC awards the MMP designation.
+Once it's awarded, change hero note 6 and the B4 "In progress" row to "PEMAC Maintenance
+Management Professional (MMP)", and put the last clause of FAQ Q7 in the past tense:
 
 ```bash
 grep -n "Maintenance Management Professional" index.html
