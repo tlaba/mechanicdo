@@ -1,61 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mechanic Do | Industrial Millwright Services in the GTA</title>
-<meta name="description" content="Licensed industrial millwright serving the Greater Toronto Area: preventive maintenance, 24/7 breakdown response, shift coverage, and work order and PM program management for plants.">
+<title>Industrial Millwright in Toronto &amp; the GTA | Mechanic Do</title>
+<meta name="description" content="Licensed 433A millwright in Toronto &amp; the GTA: preventive maintenance, 24/7 breakdown repair, shift coverage and PM programs. Call (437) 881-7808.">
 <link rel="canonical" href="https://mechanicdo.ca/">
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mechanic Do | Industrial Millwright Services in the GTA">
-<meta property="og:description" content="Preventive maintenance, 24/7 breakdown response, shift coverage, and work order and PM program management for GTA plants and production lines.">
+<meta property="og:site_name" content="Mechanic Do">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Industrial Millwright in Toronto &amp; the GTA | Mechanic Do">
+<meta property="og:description" content="Preventive maintenance, 24/7 breakdown response and shift coverage in the GTA, plus remote maintenance planning for plants across Canada and the US.">
 <meta property="og:url" content="https://mechanicdo.ca/">
-<meta property="og:image" content="https://mechanicdo.ca/assets/img/og-image.svg">
+<meta property="og:image" content="https://mechanicdo.ca/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mechanic Do, the millwright who keeps your line running. 24/7 dispatch (437) 881-7808, mechanicdo.ca">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f3c69">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/martian-mono-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>document.documentElement.classList.add('js');</script>
 
-<!-- Local business structured data. Update NAP + hours before publishing. -->
+<!-- Structured data: site, business (on-site GTA, remote Canada & US), services, hours. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Mechanic Do Millwright Services",
-  "description": "Industrial millwright services: preventive maintenance, breakdown maintenance, shift coverage, and maintenance management (work orders and PM programs).",
-  "url": "https://mechanicdo.ca/",
-  "telephone": "+1-437-881-7808",
-  "email": "dispatch@mechanicdo.ca",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Toronto",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Toronto" },
-    { "@type": "City", "name": "Mississauga" },
-    { "@type": "City", "name": "Brampton" },
-    { "@type": "City", "name": "Vaughan" },
-    { "@type": "City", "name": "Markham" },
-    { "@type": "City", "name": "Oakville" },
-    { "@type": "City", "name": "Hamilton" },
-    { "@type": "City", "name": "Oshawa" }
-  ],
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "00:00",
-    "closes": "23:59",
-    "description": "24/7 emergency breakdown dispatch"
-  }]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mechanicdo.ca/#website",
+      "url": "https://mechanicdo.ca/",
+      "name": "Mechanic Do",
+      "alternateName": "Mechanic Do Millwright Services",
+      "inLanguage": "en-CA",
+      "publisher": {
+        "@id": "https://mechanicdo.ca/#business"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://mechanicdo.ca/#business",
+      "name": "Mechanic Do",
+      "alternateName": "Mechanic Do Millwright Services",
+      "description": "Licensed 433A industrial millwright in Toronto and the GTA: preventive maintenance, 24/7 breakdown response and shift coverage on site, plus remote maintenance planning (work orders, PM programs, CMMS) for plants across Canada and the United States.",
+      "url": "https://mechanicdo.ca/",
+      "logo": "https://mechanicdo.ca/brand/logo.png",
+      "image": "https://mechanicdo.ca/assets/img/og-image.png",
+      "telephone": "+1-437-881-7808",
+      "email": "dispatch@mechanicdo.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Greater Toronto Area"
+        },
+        {
+          "@type": "City",
+          "name": "Toronto"
+        },
+        {
+          "@type": "City",
+          "name": "North York"
+        },
+        {
+          "@type": "City",
+          "name": "Scarborough"
+        },
+        {
+          "@type": "City",
+          "name": "Etobicoke"
+        },
+        {
+          "@type": "City",
+          "name": "Mississauga"
+        },
+        {
+          "@type": "City",
+          "name": "Brampton"
+        },
+        {
+          "@type": "City",
+          "name": "Vaughan"
+        },
+        {
+          "@type": "City",
+          "name": "Concord"
+        },
+        {
+          "@type": "City",
+          "name": "Markham"
+        },
+        {
+          "@type": "City",
+          "name": "Richmond Hill"
+        },
+        {
+          "@type": "City",
+          "name": "Oakville"
+        },
+        {
+          "@type": "City",
+          "name": "Burlington"
+        },
+        {
+          "@type": "City",
+          "name": "Milton"
+        },
+        {
+          "@type": "City",
+          "name": "Pickering"
+        },
+        {
+          "@type": "City",
+          "name": "Ajax"
+        },
+        {
+          "@type": "City",
+          "name": "Whitby"
+        },
+        {
+          "@type": "City",
+          "name": "Oshawa"
+        },
+        {
+          "@type": "City",
+          "name": "Newmarket"
+        },
+        {
+          "@type": "City",
+          "name": "Aurora"
+        },
+        {
+          "@type": "City",
+          "name": "Hamilton"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "17:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "23:59"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "emergency",
+          "name": "24/7 breakdown dispatch",
+          "telephone": "+1-437-881-7808",
+          "email": "dispatch@mechanicdo.ca",
+          "availableLanguage": "English",
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Greater Toronto Area"
+          },
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Industrial maintenance",
+        "Millwright services",
+        "Preventive maintenance",
+        "Breakdown maintenance",
+        "Maintenance planning and scheduling",
+        "Work order management",
+        "Preventive maintenance program development",
+        "Computerized maintenance management systems (CMMS)"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Millwright and maintenance services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Preventive maintenance",
+              "description": "PM schedules built around your equipment and OEM intervals, run on time, with a photo report and parts list after each visit.",
+              "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Greater Toronto Area"
+              },
+              "provider": {
+                "@id": "https://mechanicdo.ca/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Breakdown maintenance",
+              "description": "24/7 emergency breakdown response: on-site diagnosis and repair, with root-cause notes so the same failure doesn't repeat.",
+              "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Greater Toronto Area"
+              },
+              "provider": {
+                "@id": "https://mechanicdo.ca/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shift coverage",
+              "description": "A licensed millwright for afternoon, night and weekend shifts, short-term or ongoing.",
+              "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Greater Toronto Area"
+              },
+              "provider": {
+                "@id": "https://mechanicdo.ca/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Remote maintenance planning",
+              "description": "Work order process, PM program development, job plans, weekly scheduling, CMMS setup and cleanup, critical spares and KPIs, done remotely.",
+              "areaServed": [
+                {
+                  "@type": "Country",
+                  "name": "Canada"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United States"
+                }
+              ],
+              "provider": {
+                "@id": "https://mechanicdo.ca/#business"
+              },
+              "url": "https://mechanicdo.ca/maintenance-planning/"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -67,7 +296,7 @@
 <div class="strip">
   <div class="strip__in">
     <p class="strip__msg"><span class="pulse" aria-hidden="true"></span>24/7 breakdown dispatch across the GTA</p>
-    <p class="strip__dwg" aria-hidden="true">DWG MD-001 &middot; Sheet 1 of 1 &middot; Rev C</p>
+    <p class="strip__dwg" aria-hidden="true">DWG MD-001 &middot; Sheet 1 of 2 &middot; Rev D</p>
     <a class="strip__tel" href="tel:+14378817808">(437) 881-7808</a>
   </div>
 </div>
@@ -75,7 +304,7 @@
 <!-- ============ HEADER ============ -->
 <header class="hdr" id="siteHeader">
   <div class="hdr__in">
-    <a class="brand" href="#top" aria-label="Mechanic Do home">
+    <a class="brand" href="#top" aria-label="Mechanic Do Millwright Services, home">
       <span class="brand__word">Mechanic</span>
       <span class="brand__leader" aria-hidden="true"></span>
       <span class="brand__balloon">Do</span>
@@ -115,7 +344,7 @@
       <div class="hero__grid">
         <div class="hero__copy">
           <p class="dimline"><span class="dimline__txt">Greater Toronto Area &middot; Industrial &amp; manufacturing</span></p>
-          <h1 id="hero-title">The millwright who keeps your <span class="redline">line running.</span></h1>
+          <h1 id="hero-title">The GTA millwright who keeps your <span class="redline">line running.</span></h1>
           <p class="lede">
             Preventive maintenance, emergency breakdown response, contract shift coverage, and the
             work orders and PM programs that run it all &mdash; delivered by a licensed industrial millwright
@@ -428,6 +657,8 @@
             <div>
               <h3>Maintenance management</h3>
               <p>The system behind the wrenches: the work orders and PM program that decide what gets done, when, and how it&rsquo;s recorded. I set them up, clean them up, or run them alongside your team.</p>
+              <p class="remote-tag"><span class="remote-tag__k">Remote</span>Plants anywhere in Canada and the US</p>
+              <a class="btn btn--line btn--sm" href="maintenance-planning/">How remote planning works <span class="btn__arw" aria-hidden="true"></span></a>
             </div>
             <div>
               <p class="incl">What&rsquo;s included</p>
@@ -522,9 +753,11 @@
         <div class="cov__copy">
           <h2 id="cov-title">Based in the GTA. Growing across North America.</h2>
           <p>
-            Today I work out of the Greater Toronto Area, which keeps response
-            times short and travel charges honest. As I add millwrights, I&rsquo;m expanding
-            into the rest of Ontario, then nationally across Canada and into the United States.
+            Hands-on work runs out of the Greater Toronto Area, which keeps response
+            times short and travel charges honest. <a href="maintenance-planning/">Maintenance planning</a> &mdash;
+            work orders, PM programs and CMMS &mdash; is done remotely, so it&rsquo;s available to plants
+            anywhere in Canada and the United States today. As I add millwrights, I&rsquo;m expanding
+            on-site service into the rest of Ontario, then across Canada and into the US.
           </p>
           <p class="muted">Outside the current zone with a multi-site or shutdown need? Ask &mdash; I travel for the right scope.</p>
         </div>
@@ -537,6 +770,11 @@
               <strong>Greater Toronto Area</strong>
               <span class="road__what">Full PM, breakdown, and shift coverage</span>
             </li>
+            <li class="road__item is-now">
+              <span class="road__when cloud">Now</span>
+              <strong>Canada &amp; United States &middot;&nbsp;remote</strong>
+              <span class="road__what">Maintenance planning: work orders, PM programs, CMMS</span>
+            </li>
             <li class="road__item">
               <span class="road__when">Next</span>
               <strong>Southern Ontario</strong>
@@ -544,7 +782,7 @@
             </li>
             <li class="road__item">
               <span class="road__when">Then</span>
-              <strong>Canada &amp; United States</strong>
+              <strong>Canada &amp; United States &middot;&nbsp;on&nbsp;site</strong>
               <span class="road__what">Multi-site programs and travelling shutdown crews</span>
             </li>
           </ol>
@@ -748,7 +986,7 @@
           </details>
           <details class="qa">
             <summary><span class="qa__n" aria-hidden="true">Q6</span><span class="qa__q">We have sites outside the GTA &mdash; can you still help?</span><span class="qa__x" aria-hidden="true"></span></summary>
-            <div class="qa__a"><p>Often, yes. I&rsquo;m expanding through Southern Ontario and then across Canada and the US. For multi-site programs and shutdowns I already travel &mdash; send me the locations and I&rsquo;ll tell you honestly what I can cover.</p></div>
+            <div class="qa__a"><p>Yes for planning work: work orders, PM programs and CMMS are done remotely, so I take them on for plants anywhere in Canada and the US &mdash; see <a href="maintenance-planning/">remote maintenance planning</a>. Hands-on service is expanding through Southern Ontario first, and for multi-site programs and shutdowns I already travel &mdash; send me the locations and I&rsquo;ll tell you honestly what I can cover.</p></div>
           </details>
           <details class="qa">
             <summary><span class="qa__n" aria-hidden="true">Q7</span><span class="qa__q">Can you set up our work order and PM system?</span><span class="qa__x" aria-hidden="true"></span></summary>
@@ -863,7 +1101,7 @@
         <span class="brand__balloon">Do</span>
         <span class="brand__sub">Millwright services</span>
       </span>
-      <p>Industrial millwright services for the Greater Toronto Area &mdash; preventive maintenance, breakdown response, and shift coverage.</p>
+      <p>Industrial millwright services for the Greater Toronto Area &mdash; preventive maintenance, breakdown response and shift coverage &mdash; plus remote maintenance planning for plants across Canada and the US.</p>
     </div>
     <nav class="tb__nav" aria-label="Footer">
       <div class="tb__col">
@@ -872,6 +1110,7 @@
         <a href="#services">Breakdown maintenance</a>
         <a href="#services">Shift coverage</a>
         <a href="#services">Maintenance management</a>
+        <a href="maintenance-planning/">Remote maintenance planning</a>
       </div>
       <div class="tb__col">
         <h3>Company</h3>
@@ -890,13 +1129,13 @@
       <div class="tb__m tb__m--title"><dt>Title</dt><dd>Industrial millwright services</dd></div>
       <div class="tb__m"><dt>Drawn by</dt><dd>Mechanic Do</dd></div>
       <div class="tb__m"><dt>Scale</dt><dd>GTA</dd></div>
-      <div class="tb__m"><dt>Sheet</dt><dd>1 of 1</dd></div>
-      <div class="tb__m tb__m--rev"><dt>Rev</dt><dd>C</dd></div>
+      <div class="tb__m"><dt>Sheet</dt><dd>1 of 2</dd></div>
+      <div class="tb__m tb__m--rev"><dt>Rev</dt><dd>D</dd></div>
     </dl>
   </div>
   <div class="tb__legal">
     <p>&copy; <span id="year">2026</span> Mechanic Do Millwright Services. All rights reserved.</p>
-    <p>Serving Toronto, Mississauga, Brampton, Vaughan, Markham, Oakville, Hamilton &amp; the GTA.</p>
+    <p>On site: Toronto, Mississauga, Brampton, Vaughan, Markham, Oakville, Hamilton &amp; the GTA. Remote planning: Canada &amp; the US.</p>
   </div>
 </footer>
 

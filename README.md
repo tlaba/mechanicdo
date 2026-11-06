@@ -1,10 +1,17 @@
 # Mechanic Do — Millwright Services website
 
-A fast, single-page marketing site for an industrial millwright business, built around
+A fast marketing site for an industrial millwright business, built around
 four services: **preventive maintenance**, **breakdown maintenance**, **shift
 coverage**, and **maintenance management** (work orders, PM programs, planning and
-the CMMS behind them). Positioned for the **GTA** first, with a visible
-expansion path to the rest of Ontario, Canada, and the US.
+the CMMS behind them). Hands-on work is positioned for **Toronto and the GTA**, with a
+visible expansion path to the rest of Ontario, Canada, and the US. Maintenance planning
+is done remotely, so it's sold to plants **anywhere in Canada and the US** today.
+
+Two pages:
+
+- `/` (`index.html`): the main site, aimed at GTA plants.
+- `/maintenance-planning/`: a landing page for remote maintenance planning, aimed at
+  plants across Canada and the US.
 
 Plain HTML, CSS, and JavaScript — no build step, no framework, no dependencies.
 The design is an engineering drawing: drafting-paper grid, section-cut markers,
@@ -22,16 +29,20 @@ cancellation terms, industries — has been confirmed by the owner.)
 
 | What | Placeholder in the code | Where |
 |---|---|---|
-| Phone number | `(437) 881-7808` / `+14378817808` (live) | `index.html`, `404.html`, `assets/js/main.js` |
-| Email | `dispatch@mechanicdo.ca` | `index.html`, `assets/js/main.js` |
-| Site URL | `https://mechanicdo.ca/` (live) | `CNAME`, `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
-| Business name | `Mechanic Do Millwright Services` | `index.html`, `404.html`, `README.md` |
-| Office hours | `Mon–Fri 5 pm–midnight · Sat–Sun 6 am–midnight` (confirmed) | `index.html` (contact list) |
+| Phone number | `(437) 881-7808` / `+14378817808` / `+1-437-881-7808` (live) | `index.html`, `maintenance-planning/index.html`, `404.html`, `assets/js/main.js` |
+| Email | `dispatch@mechanicdo.ca` | `index.html`, `maintenance-planning/index.html`, `assets/js/main.js` |
+| Site URL | `https://mechanicdo.ca/` (live) | `CNAME`, both pages (canonical, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml` |
+| Business name | `Mechanic Do Millwright Services` | `index.html`, `maintenance-planning/index.html`, `404.html`, `README.md` |
+| Office hours | `Mon–Fri 5 pm–midnight · Sat–Sun 6 am–midnight` (confirmed) | `index.html` (contact list **and** `openingHoursSpecification` in the JSON-LD), `maintenance-planning/index.html` (the "Office hours" row and FAQ Q2), and your Google Business Profile |
 
-To change the phone number later, replace both spellings everywhere:
+Keep the name, phone number and hours identical everywhere, including Google Business
+Profile and any directory listings. Google cross-checks them, and mismatches cost local
+ranking.
+
+To change the phone number later, replace all three spellings everywhere:
 
 ```bash
-sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-437-881-7808/+1-NEW-NEW-NUMB/g' index.html 404.html assets/js/main.js
+sed -i 's/(437) 881-7808/(NEW) NEW-NUMB/g; s/+14378817808/+1NEWNUMBER/g; s/+1-437-881-7808/+1-NEW-NEW-NUMB/g' index.html maintenance-planning/index.html 404.html assets/js/main.js
 ```
 
 
@@ -48,12 +59,16 @@ What the owner holds, and how the site words it:
 - **In progress:** the full Maintenance Management Professional (MMP) program: hero
   note 6, the "In progress" row on B4, and FAQ Q7.
 
+The remote-planning page repeats the same three facts in its hero "Credentials" notes
+(3–6), the "Detail D" table, and FAQ Q3.
+
 Never shorten any of this to "MMP" or "certified" until PEMAC awards the MMP designation.
-Once it's awarded, change hero note 6 and the B4 "In progress" row to "PEMAC Maintenance
-Management Professional (MMP)", and put the last clause of FAQ Q7 in the past tense:
+Once it's awarded, update every "In progress" / "Completing" line on both pages to
+"PEMAC Maintenance Management Professional (MMP)", and put the matching FAQ answers
+(Q7 on the home page, Q3 on the planning page) in the past tense:
 
 ```bash
-grep -n "Maintenance Management Professional" index.html
+grep -n "Maintenance Management Professional\|Completing\|finishing" index.html maintenance-planning/index.html
 ```
 
 ---
@@ -100,63 +115,127 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-(Opening `index.html` directly works too — the server just makes `/`-rooted paths in
-`404.html` behave.)
+Use the server rather than opening the files directly: links between the two pages point
+at folders (`maintenance-planning/`, `../`), and only a web server turns a folder into its
+`index.html`.
 
 ---
 
 ## What's in here
 
 ```
-index.html              The whole site — every section lives here
-404.html                Not-found page (GitHub Pages picks this up automatically)
-assets/css/styles.css   All styling, organised by section, responsive + print styles
-assets/js/main.js       Nav, scroll effects, form validation and submission
-assets/fonts/           Self-hosted Archivo + Martian Mono (variable woff2, OFL)
-assets/img/favicon.svg  Browser tab icon
-assets/img/og-image.svg Social sharing card artwork (see note below)
-robots.txt, sitemap.xml Search engine basics — update the domain
-.nojekyll               Tells GitHub Pages to serve the files as-is
+index.html                    Main site (GTA): every home-page section lives here
+maintenance-planning/         Remote maintenance planning landing page (Canada & US)
+404.html                      Not-found page (GitHub Pages picks this up automatically)
+assets/css/styles.css         All styling for both pages, organised by section
+assets/js/main.js             Nav, scroll effects, form validation and submission
+assets/fonts/                 Self-hosted Archivo + Martian Mono (variable woff2, OFL)
+assets/img/favicon.svg        Browser tab icon (the source for the PNG icons)
+assets/img/icon-192.png       Icon for Android and for Google's search results
+assets/img/apple-touch-icon.png  iPhone home-screen icon (180×180)
+favicon.ico                   Fallback icon for crawlers and old browsers (32 + 48 px)
+assets/img/og-image.png       Social sharing card, 1200×630 (made from brand/og.html)
+brand/                        Logo, Google Business cover, and the sharing-card source
+                              (all noindex, so they stay out of search results)
+robots.txt, sitemap.xml       Search engine basics: list every page in the sitemap
+dbc73c50818cdec9a4cf25737a3e57f9.txt  IndexNow key for Bing (keep it, see SEO below)
+CNAME                         Custom domain for GitHub Pages (don't delete)
+.nojekyll                     Tells GitHub Pages to serve the files as-is
 ```
 
 ### Page sections
 
+Home page (`index.html`):
+
 1. **Hero** — headline, dual CTA (quote / call), trust strip, and a "line down right now?" dispatch card
 2. **Services** — four detail sheets (B1–B4), each with a concrete "what's included" list;
    B4, maintenance management, is a full-width sheet for the planning side of the work
+   and links to the remote-planning page
 3. **Capabilities** — equipment, millwright work, and industries, so buyers self-qualify
-4. **Coverage** — GTA cities today plus a three-stage expansion roadmap (Ontario → Canada → US)
+4. **Coverage** — GTA cities today, remote planning across Canada and the US, and the
+   on-site expansion roadmap (Ontario → Canada → US)
 5. **How it works** — four steps from first call to written report
 6. **Why Mechanic Do** — differentiators aimed at maintenance managers
 7. **FAQ** — the objections that come up before someone calls
 8. **Quote** — contact details and the request form
 
+Remote-planning page (`maintenance-planning/index.html`). It has no form of its own: every
+"Request a quote" button goes to the form on the home page.
+
+1. **Hero** — headline, where the work is done (remote vs on site), and credentials
+2. **What's included** — the six parts of the planning service (W.1–W.6)
+3. **How remote planning works** — four steps
+4. **PEMAC** — the program, the maintenance definition, and the credentials table
+5. **FAQ** — site visits, US plants, PEMAC, hands-on work
+6. **Get started** — quote, call, email
+
 ### Social sharing image
 
-`assets/img/og-image.svg` is the artwork. Facebook and LinkedIn don't reliably render
-SVG previews, so export a **1200×630 PNG** and switch the two meta tags in `index.html`
-back to `og-image.png`:
+`assets/img/og-image.png` is what Facebook, LinkedIn, iMessage and Slack show when someone
+shares a link. Its source is `brand/og.html`. To change it, edit that file, open it in Chrome
+at a 1200×630 window and screenshot it (or use headless Chrome), and save the result over
+`og-image.png`. Then use Facebook's Sharing Debugger to refresh their cached copy.
 
-```bash
-# any of these work
-rsvg-convert -w 1200 -h 630 assets/img/og-image.svg -o assets/img/og-image.png
-# or: open the SVG in a browser at 1200x630 and screenshot it
-```
+---
+
+## SEO
+
+**Targeting:**
+
+- **On-site work → Toronto and the GTA.** The home page title, H1, description, city
+  list, and the business's `areaServed` in the JSON-LD all name the GTA.
+- **Remote planning → Canada and the US.** Covered by `/maintenance-planning/`, whose
+  JSON-LD `Service` lists Canada and the United States as `areaServed`. The home page links
+  to it from the B4 sheet, the coverage section, FAQ Q6, and the footer.
+- **The `.ca` domain** tells Google the site is Canadian, which is right for the GTA. US
+  visibility for planning comes from that page's content, not from the domain. Don't add a
+  US copy of the site or `hreflang` tags unless you start doing on-site work in the US.
+
+**Each page has:** a unique title (≤ 60 characters) and meta description (≤ 155), a
+canonical URL, an Open Graph sharing card, and JSON-LD structured data (business, services,
+hours, areas served; breadcrumbs on the planning page). Check them with Google's
+[Rich Results Test](https://search.google.com/test/rich-results) and the
+[Schema Markup Validator](https://validator.schema.org/).
+
+**When you change a page:**
+
+1. Set its `<lastmod>` in `sitemap.xml` to today's date.
+2. Tell Bing (and other IndexNow engines) straight away:
+
+   ```bash
+   curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json' \
+     -d '{"host":"mechanicdo.ca","key":"dbc73c50818cdec9a4cf25737a3e57f9","keyLocation":"https://mechanicdo.ca/dbc73c50818cdec9a4cf25737a3e57f9.txt","urlList":["https://mechanicdo.ca/","https://mechanicdo.ca/maintenance-planning/"]}'
+   ```
+
+3. For Google: in Search Console, paste the URL into **URL Inspection** → **Request indexing**.
+
+**When you add a page:** copy the `<head>` of `maintenance-planning/index.html` (it uses
+`../` paths), give it its own title, description, canonical URL, and JSON-LD `@id`s, add it
+to `sitemap.xml`, and link to it from the home page.
+
+**One-time setup:**
+
+- **Google Search Console:** add `mechanicdo.ca` as a *Domain* property, verify it with the
+  TXT record Google gives you (Namecheap → Advanced DNS), then submit
+  `https://mechanicdo.ca/sitemap.xml` under **Sitemaps**.
+- **Bing Webmaster Tools:** sign in and import the site from Search Console.
 
 ---
 
 ## Growing the site later
 
-The single-page structure is deliberate — it converts well and it's easy to maintain.
+The structure is deliberately small — it converts well and it's easy to maintain.
 When you're ready for more, the natural next steps are:
 
 - **City landing pages** (`/millwright-services-mississauga/`) — the biggest local-SEO
-  lever, one page per city you actually want work in
-- **A Google Business Profile** — for most local trades this outperforms the website
-  itself for phone calls
+  lever, one page per city you actually want work in, each with real local content
+  (not the same page with the city name swapped)
+- **Google Business Profile** — for most local trades this outperforms the website
+  itself for phone calls. Keep it active: photos, posts, and reviews from customers
 - **Case studies** — "packaging line down 14 hours → running in 5" beats any adjective
-- **Region switching** — when the US launch happens, the coverage section and the
-  schema.org `areaServed` block are the two places that need to change
+- **Region switching** — when on-site service expands, update the coverage section, the
+  `areaServed` lists in the home page's JSON-LD (the business and each on-site service),
+  and the "On site" row on the planning page
 
 ---
 
